@@ -15,6 +15,7 @@
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>11</java.version>
+        <spring-cloud.version>2020.0.2</spring-cloud.version>
     </properties>
     <dependencies>
         <dependency>
@@ -72,7 +73,6 @@
             <artifactId>aspectjweaver</artifactId>
         </dependency>
 
-
         <!--用于JSON.toJSonString 方法使用-->
        <dependency>
            <groupId>com.saygoer</groupId>
@@ -80,9 +80,66 @@
            <version>1.1-unwrap</version>
        </dependency>
 
+        <!--redis引入-->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+        </dependency>
+        <!--mybatis引入-->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.4.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-jexl</groupId>
+            <artifactId>commons-jexl</artifactId>
+            <version>1.1</version>
+        </dependency>
+
+        <!--用于服务调用的时候熔断机制-->
+        <dependency>
+            <groupId>com.netflix.hystrix</groupId>
+            <artifactId>hystrix-core</artifactId>
+            <version>1.5.6</version>
+        </dependency>
+
+
+        <!--Ribbon提供了服务间调用的客户端负载均衡功能，  等同fegin-->
+        <dependency>
+            <groupId>com.netflix.ribbon</groupId>
+            <artifactId>ribbon</artifactId>
+            <version>2.2.2</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+    </dependencies>
 
 
 
-   </dependencies>
 
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
