@@ -8,11 +8,16 @@
         <version>2.5.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.example</groupId>
+    <groupId>com.springBoot.Main</groupId>
     <artifactId>springbootProject</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springbootProject</name>
-    <description>Demo project for Spring Boot</description>
+    <packaging>pom</packaging>  <!--为了子模块 能引用主pom-->
+
+    <modules>
+        <module>moudule1</module> <!--add了子模块-->
+    </modules>
+
     <properties>
         <java.version>11</java.version>
         <spring-cloud.version>2020.0.2</spring-cloud.version>
@@ -85,12 +90,21 @@
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
         </dependency>
+
         <!--mybatis引入-->
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
             <version>3.4.6</version>
         </dependency>
+
+        <!--用于mybatis  引入SqlSessionFactoryBean ，用于配置类 类引入配置类-->
+        <dependency>
+            <groupId>com.rainingsince</groupId>
+            <artifactId>spring-mybatis</artifactId>
+            <version>0.1.1</version>
+        </dependency>
+
 
         <dependency>
             <groupId>commons-jexl</groupId>
@@ -113,11 +127,18 @@
             <version>2.2.2</version>
         </dependency>
 
+       <!-- <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka-server</artifactId>
+            <version>1.4.4.RELEASE</version>
+        </dependency>
+
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+            <version>1.4.4.RELEASE</version>
+        </dependency>-->
 
         <dependency>
             <groupId>mysql</groupId>
@@ -125,11 +146,20 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!--引入oracle-->
+        <dependency>
+            <groupId>com.oracle.database.jdbc</groupId>
+            <artifactId>ojdbc8</artifactId>
+        </dependency>
+
+        <!-- druid 数据库连接池 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.10</version>
+        </dependency>
+
     </dependencies>
-
-
-
-
 
     <dependencyManagement>
         <dependencies>

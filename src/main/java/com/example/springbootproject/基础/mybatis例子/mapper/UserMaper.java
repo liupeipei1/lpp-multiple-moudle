@@ -7,6 +7,4 @@ import java.util.List;
 @Mapper
 public interface UserMaper {
     List<User>  getUser(String name);
-
-
 }
