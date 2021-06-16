@@ -4,7 +4,7 @@ import com.example.springbootproject.Request.StudentResponse;
 
 import java.util.List;
 
-public interface Student {
+public interface StudentMapper {
 
     List<StudentResponse> getStudent();
 }
