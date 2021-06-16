@@ -21,7 +21,7 @@ public class MybatisConfig {
         sqlSessionFactoryBean.setDataSource(dataSource);
         //注意：classspath :只会到你classpathc查找路径
         //classPath* 不仅是查询class路径  还会查找jar中得class路径  这样加载很慢
-        sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classPath*:/mapper/**/*.xml"));
+        sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classPath*:/mapper/*/*.xml"));
         return sqlSessionFactoryBean.getObject();
     }
 

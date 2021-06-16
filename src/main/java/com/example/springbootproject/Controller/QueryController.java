@@ -18,7 +18,7 @@ import java.util.List;
 @RestController
 public class QueryController {
 
-    @Resource
+     @Resource
      private UserMaper userMaper;
 
 
