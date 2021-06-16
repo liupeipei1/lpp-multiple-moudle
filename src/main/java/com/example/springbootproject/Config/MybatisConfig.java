@@ -13,7 +13,7 @@ import javax.sql.DataSource;
  2、自定义xml路径
  */
 @Configuration
-public class mybatisConfig {
+public class MybatisConfig {
 
     @Bean
     public SqlSessionFactory sqlSessionFactoryBean(DataSource dataSource) throws Exception {
