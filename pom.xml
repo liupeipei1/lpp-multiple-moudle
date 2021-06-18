@@ -8,14 +8,15 @@
         <version>2.5.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.springBoot.Main</groupId>
+    <groupId>com.example.demo</groupId>  <!--父子模板保持一致-->
     <artifactId>springbootProject</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springbootProject</name>
     <packaging>pom</packaging>  <!--为了子模块 能引用主pom-->
 
     <modules>
-        <module>moudule1</module> <!--add了子模块-->
+        <module>common</module> <!--add了子模块-->
+        <module>mybatis-learning</module> <!--add了子模块-->
     </modules>
 
     <properties>
@@ -103,6 +104,13 @@
             <groupId>com.rainingsince</groupId>
             <artifactId>spring-mybatis</artifactId>
             <version>0.1.1</version>
+        </dependency>
+
+        <!--mybatis支持包 -->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>1.3.2</version>
         </dependency>
 
 
