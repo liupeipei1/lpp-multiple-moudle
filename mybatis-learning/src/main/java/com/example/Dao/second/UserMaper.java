@@ -1,11 +1,10 @@
 package com.example.Dao.second;
 
 import com.example.Response.Userinfo;
-import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
-@Mapper
+@Repository
 public interface UserMaper {
     List<Userinfo> getUser(String name);
 }

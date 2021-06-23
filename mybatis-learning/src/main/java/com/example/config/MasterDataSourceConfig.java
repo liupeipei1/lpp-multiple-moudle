@@ -76,7 +76,7 @@ public class MasterDataSourceConfig {
         final SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
         sessionFactory.setDataSource(masterDataSource);
         sessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver()
-                .getResources(ClusterDataSourceConfig.MAPPER_LOCATION));
+                .getResources(MasterDataSourceConfig.MAPPER_LOCATION));  //设置XML地址
         return sessionFactory.getObject();
     }
 }
