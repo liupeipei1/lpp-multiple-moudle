@@ -1,14 +1,20 @@
 package com.example.Service;
 
-import com.example.Dto.StudentResponse;
-import com.example.Dto.ClientDTo;
+import com.example.Dao.master.StudentMapper;
+import com.example.Response.Student;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class DoService {
 
-    public StudentResponse getStudent(ClientDTo clientDTo){
-        return  new StudentResponse(clientDTo);
+    @Resource
+    private StudentMapper  studentMapper;
+
+    public List<Student> getStudent(String  name){
+        return  studentMapper.getStudent(name);
     }
 
 

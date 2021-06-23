@@ -7,6 +7,8 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -22,8 +24,8 @@ import javax.sql.DataSource;
 @MapperScan(basePackages = MasterDataSourceConfig.PACKAGE, sqlSessionFactoryRef = "masterSqlSessionFactory")
 public class MasterDataSourceConfig {
 
-    static final String PACKAGE = "org.spring.springboot.dao.master";
-    static final String MAPPER_LOCATION = "classpath:mapper/master/*.xml";
+    static final String PACKAGE = "com.example.Dao.master"; //dao的地址
+    static final String MAPPER_LOCATION = "classpath:mapper/master/*.xml"; //mybatis。xml地址
 
 
     @Value("${master.datasource.url}")
@@ -38,10 +40,9 @@ public class MasterDataSourceConfig {
     @Value("${master.datasource.driverClassName}")
     private String driverClass;
 
-    @Bean(name = "masterDataSource")
+    @Bean(name = "masterDataSource") //方法1：
     @Primary
     public DataSource masterDataSource() {
-
         DruidDataSource dataSource = new DruidDataSource();
         dataSource.setDriverClassName(driverClass);
         dataSource.setUrl(url);
@@ -50,6 +51,17 @@ public class MasterDataSourceConfig {
         return dataSource;
     }
 
+
+
+  /* 方法1等价于该方法：
+   @Bean(name = "masterDataSource")
+    @ConfigurationProperties(prefix = "master.datasource")
+    @Primary
+    public DataSource masterDataSource() {
+        return DataSourceBuilder.create().build();
+    }
+*/
+
     @Bean(name = "masterTransactionManager")
     @Primary
     public DataSourceTransactionManager masterTransactionManager() {
@@ -57,11 +69,12 @@ public class MasterDataSourceConfig {
     }
 
 
-    @Bean(name = "clusterSqlSessionFactory")
-    public SqlSessionFactory clusterSqlSessionFactory(@Qualifier("clusterDataSource") DataSource clusterDataSource)
+    @Bean(name = "masterSqlSessionFactory")
+    @Primary
+    public SqlSessionFactory masterSqlSessionFactory(@Qualifier("masterSqlSessionFactory") DataSource masterDataSource)
             throws Exception {
         final SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
-        sessionFactory.setDataSource(clusterDataSource);
+        sessionFactory.setDataSource(masterDataSource);
         sessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver()
                 .getResources(ClusterDataSourceConfig.MAPPER_LOCATION));
         return sessionFactory.getObject();

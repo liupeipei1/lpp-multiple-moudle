@@ -1,8 +1,10 @@
 package com.example.Controller;
 
-import com.example.Dao.UserMaper;
-import com.example.Dto.Userinfo;
-import com.example.Dto.ClientDTo;
+import com.example.Dao.second.UserMaper;
+import com.example.Response.ClientDTo;
+import com.example.Response.Student;
+import com.example.Response.Userinfo;
+import com.example.Service.DoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.validation.annotation.Validated;
@@ -14,18 +16,28 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import java.util.List;
 
-@Api(tags = "其他接口文档", value = "/bb", description = "其他接口文档")
+@Api(tags = "查询接口文档", value = "/test", description = "查询接口文档")
 @RestController
 public class QueryController {
 
      @Resource
      private UserMaper userMaper;
 
+     @Resource
+     private DoService doService;
 
-    @ApiOperation(value = "查询接口2", httpMethod = "Get", notes = "查询客户信息接口")
+
+    @ApiOperation(value = "查询接口2", httpMethod = "Get", notes = "json查询")
     @GetMapping("/bb")
-    public String aa(@RequestBody @Validated ClientDTo ClientDTo) {
-        return "12347";
+    public ClientDTo aa(@RequestBody @Validated ClientDTo clientDTo) {
+        return clientDTo;
+    }
+
+
+    @ApiOperation(value = "查询接口", httpMethod = "Get", notes = "查询学生信息")
+    @GetMapping("/getStudent")
+    public List<Student> getstudent(@PathVariable(name = "name") String name) {
+       return doService.getStudent(name);
     }
 
 

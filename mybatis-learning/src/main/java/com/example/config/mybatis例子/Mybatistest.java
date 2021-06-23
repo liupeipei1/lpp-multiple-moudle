@@ -1,7 +1,7 @@
 package com.example.config.mybatis例子;
 
-import com.example.Dao.UserMaper;
-import com.example.Dto.Userinfo;
+import com.example.Dao.second.UserMaper;
+import com.example.Response.Userinfo;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
