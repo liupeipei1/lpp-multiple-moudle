@@ -1,5 +1,6 @@
 package com.example.Controller;
 
+import com.example.Dao.master.StudentMapper;
 import com.example.Dao.second.UserMaper;
 import com.example.Response.ClientDTo;
 import com.example.Response.Student;
@@ -24,9 +25,9 @@ public class QueryController {
     @Autowired
      private UserMaper userMaper;
 
-    @Autowired
-     private DoService doService;
-
+    /*@Autowired
+     private StudentMapper studentMapper;
+*/
 
     @ApiOperation(value = "查询接口2", httpMethod = "Get", notes = "json查询")
     @GetMapping("/bb")
@@ -35,12 +36,12 @@ public class QueryController {
     }
 
 
-    @ApiOperation(value = "查询接口", httpMethod = "Get", notes = "查询学生信息")
+   /* @ApiOperation(value = "查询接口", httpMethod = "Get", notes = "查询学生信息")
     @GetMapping("/getStudent")
     public List<Student> getstudent(@PathVariable(name = "name") String name) {
-       return doService.getStudent(name);
+       return studentMapper.getStudent(name);
     }
-
+*/
 
     @ApiOperation(value = "查询用户信息", httpMethod = "Get", notes = "查询用户信息接口")
     @GetMapping("/getUser")

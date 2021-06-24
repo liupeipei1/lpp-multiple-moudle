@@ -11,12 +11,12 @@ import java.util.List;
 @Service
 public class DoService {
 
-    @Autowired
+  /*  @Autowired
     private StudentMapper  studentMapper;
 
     public List<Student> getStudent(String  name){
         return  studentMapper.getStudent(name);
-    }
+    }*/
 
 
 }

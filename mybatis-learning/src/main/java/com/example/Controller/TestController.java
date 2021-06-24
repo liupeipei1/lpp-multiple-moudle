@@ -17,10 +17,10 @@ public class TestController {
     @Resource
     private com.example.Service.DoService DoService;
 
-    @ApiOperation(value = "查询接口",httpMethod = "Get",notes = "查询学生信息")
+   /* @ApiOperation(value = "查询接口",httpMethod = "Get",notes = "查询学生信息")
     @GetMapping("/getStudent")
     public List<Student> aa(@RequestBody  @Validated String  name){
         return  DoService.getStudent(name);
-    }
+    }*/
 
 }
