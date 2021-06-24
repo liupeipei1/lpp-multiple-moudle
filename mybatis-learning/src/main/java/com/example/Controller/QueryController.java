@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import java.util.List;
 
-@Api(tags = "查询接口文档", value = "/test", description = "查询接口文档")
+@Api(tags = "查询接口文档", value = "/test", description = "只是用于查询的接口")
 @RestController
 public class QueryController {
 
@@ -29,21 +29,21 @@ public class QueryController {
      private StudentMapper studentMapper;
 */
 
-    @ApiOperation(value = "查询接口2", httpMethod = "Get", notes = "json查询")
+    @ApiOperation(value = "查询接口", httpMethod = "GET", notes = "json查询") //注意这里的httpMethod=后面是必须大写 不能写成Get 否则后台报错
     @GetMapping("/bb")
     public ClientDTo aa(@RequestBody @Validated ClientDTo clientDTo) {
         return clientDTo;
     }
 
 
-   /* @ApiOperation(value = "查询接口", httpMethod = "Get", notes = "查询学生信息")
+   /* @ApiOperation(value = "查询接口", httpMethod = "GET", notes = "查询学生信息")
     @GetMapping("/getStudent")
     public List<Student> getstudent(@PathVariable(name = "name") String name) {
        return studentMapper.getStudent(name);
     }
 */
 
-    @ApiOperation(value = "查询用户信息", httpMethod = "Get", notes = "查询用户信息接口")
+    @ApiOperation(value = "查询用户信息", httpMethod = "GET", notes = "查询用户信息接口")
     @GetMapping("/getUser")
     public List<Userinfo> getUser(@PathVariable(name = "name")  String  name) {
        return userMaper.getUser(name);
