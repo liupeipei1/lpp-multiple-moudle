@@ -29,12 +29,12 @@ public class LogAspect {
 
     @Before("apilog()")
     public void doBefore() {
-        System.out.printf("Before方法执行");
+        System.out.println("Before方法执行");
     }
 
     @After("apilog()")
     public void doAfter() {
-        System.out.printf("after方法执行");
+        System.out.println("after方法执行");
     }
 
 
