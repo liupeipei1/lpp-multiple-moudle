@@ -12,12 +12,4 @@ public class Student {
     private  int age;
     private  String course;
 
-
-    public Student(ClientDTo clientDTo){
-        this.id=clientDTo.getId();
-        this.age=clientDTo.getAge();
-        this.name=clientDTo.getName();
-        this.course="数学";
-
-    }
 }

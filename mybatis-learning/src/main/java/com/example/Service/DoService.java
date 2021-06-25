@@ -5,18 +5,17 @@ import com.example.Response.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 @Service
 public class DoService {
 
-  /*  @Autowired
+    @Autowired
     private StudentMapper  studentMapper;
 
     public List<Student> getStudent(String  name){
         return  studentMapper.getStudent(name);
-    }*/
+    }
 
 
 }
