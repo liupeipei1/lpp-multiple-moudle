@@ -22,7 +22,7 @@ import javax.sql.DataSource;
 @MapperScan(basePackages = ClusterDataSourceConfig.PACKAGE, sqlSessionFactoryRef = "clusterSqlSessionFactory")
 public class ClusterDataSourceConfig {
     static final String MAPPER_LOCATION = "classpath:mapper/cluster/*.xml";
-    static final String PACKAGE = "com.example.Dao.second";
+    static final String PACKAGE = "com.example.Dao.second"; //mapper文件夹
 
     @Value("${cluster.datasource.url}")
     private String url;
