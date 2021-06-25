@@ -19,6 +19,7 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import javax.sql.DataSource;
+import java.sql.SQLException;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -47,14 +48,19 @@ public class MasterDataSourceConfig {
     @Value("${master.datasource.driverClassName}")
     private String driverClass;
 
+
+    @Value("${spring.datasource.filters}")
+    private String filters;
+
     @Bean(name = "masterDataSource") //方法1：
     @Primary
-    public DataSource masterDataSource() {
+    public DataSource masterDataSource() throws SQLException {
         DruidDataSource dataSource = new DruidDataSource();
         dataSource.setDriverClassName(driverClass);
         dataSource.setUrl(url);
         dataSource.setUsername(user);
         dataSource.setPassword(password);
+        dataSource.setFilters(filters);
         return dataSource;
     }
 
@@ -71,7 +77,7 @@ public class MasterDataSourceConfig {
 
     @Bean(name = "masterTransactionManager")
     @Primary
-    public DataSourceTransactionManager masterTransactionManager() {
+    public DataSourceTransactionManager masterTransactionManager() throws SQLException {
         return new DataSourceTransactionManager(masterDataSource());
     }
 
@@ -93,7 +99,7 @@ public class MasterDataSourceConfig {
      * @return ServletRegistrationBean
      * 原文链接：https://blog.csdn.net/qq_27634797/article/details/100560118
      */
-    @Bean
+   /* @Bean
     public ServletRegistrationBean servletRegistrationBean() {
         ServletRegistrationBean<StatViewServlet> bean = new ServletRegistrationBean<>(new StatViewServlet(), "/druid/*");
         Map<String, String> map = new HashMap<>();
@@ -119,5 +125,5 @@ public class MasterDataSourceConfig {
         bean.setUrlPatterns(Collections.singletonList("/*"));
         return bean;
         //原文链接：https://blog.csdn.net/qq_27634797/article/details/100560118
-    }
+    }*/
 }

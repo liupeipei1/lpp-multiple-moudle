@@ -12,6 +12,7 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import javax.sql.DataSource;
+import java.sql.SQLException;
 
 /*
 刘佩佩
@@ -20,7 +21,7 @@ import javax.sql.DataSource;
 @Configuration
 // 扫描 Mapper 接口并容器管理
 @MapperScan(basePackages = ClusterDataSourceConfig.PACKAGE, sqlSessionFactoryRef = "clusterSqlSessionFactory")
-public class ClusterDataSourceConfig {
+public class ClusterDataSourceConfig{
     static final String MAPPER_LOCATION = "classpath:mapper/cluster/*.xml";
     static final String PACKAGE = "com.example.Dao.second"; //mapper文件夹
 
@@ -36,18 +37,23 @@ public class ClusterDataSourceConfig {
     @Value("${cluster.datasource.driverClassName}")
     private String driverClass;
 
+
+    @Value("${spring.datasource.filters}")
+    private String filters;
+
     @Bean(name = "clusterDataSource")
-    public DataSource clusterDataSource() {
+    public DataSource clusterDataSource() throws SQLException {
         DruidDataSource dataSource = new DruidDataSource();
         dataSource.setDriverClassName(driverClass);
         dataSource.setUrl(url);
         dataSource.setUsername(user);
         dataSource.setPassword(password);
+        dataSource.setFilters(filters);
         return dataSource;
     }
 
     @Bean(name = "clusterTransactionManager")
-    public DataSourceTransactionManager clusterTransactionManager() {
+    public DataSourceTransactionManager clusterTransactionManager() throws SQLException {
         return new DataSourceTransactionManager(clusterDataSource());
     }
 
