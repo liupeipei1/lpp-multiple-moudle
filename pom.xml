@@ -17,6 +17,7 @@
     <modules>
         <module>common</module> <!--add了子模块-->
         <module>mybatis-learning</module> <!--add了子模块-->
+        <module>spring-euraka</module><!--add了子模块-->
     </modules>
 
     <properties>
@@ -92,19 +93,6 @@
             <artifactId>jedis</artifactId>
         </dependency>
 
-        <!--mybatis引入-->
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis</artifactId>
-            <version>3.4.6</version>
-        </dependency>
-
-        <!--用于mybatis  引入SqlSessionFactoryBean ，用于配置类 类引入配置类-->
-        <dependency>
-            <groupId>com.rainingsince</groupId>
-            <artifactId>spring-mybatis</artifactId>
-            <version>0.1.1</version>
-        </dependency>
 
         <!--mybatis支持包 -->
         <dependency>
@@ -113,7 +101,7 @@
            <version>2.2.0</version>
         </dependency>
 
-
+        <!--jexl引入 支持算法 -->
         <dependency>
             <groupId>commons-jexl</groupId>
             <artifactId>commons-jexl</artifactId>
@@ -142,18 +130,11 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- Oracle驱动包 -->
+        <!-- Oracle驱动包  不添加，就没有驱动oracle.jdbc.OracleDriver-->
         <dependency>
             <groupId>com.oracle.database.jdbc</groupId>
             <artifactId>ojdbc8</artifactId>
         </dependency>
-
-        <!-- jdbc驱动包 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jdbc</artifactId>
-        </dependency>
-
 
         <!-- druid 数据库连接池   -->
         <dependency>
@@ -161,7 +142,6 @@
             <artifactId>druid-spring-boot-starter</artifactId>
             <version>1.2.6</version>
         </dependency>
-
 
     </dependencies>
 

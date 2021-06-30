@@ -19,4 +19,14 @@
     <dependencies>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId><!--当进行打包mvn package 会打包成一个可以直接运行的 JAR 文件使用“java -jar”命令就可以直接运行-->
+                <version>2.5.0</version>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>

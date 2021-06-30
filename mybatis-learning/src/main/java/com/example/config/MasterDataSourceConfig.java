@@ -93,37 +93,4 @@ public class MasterDataSourceConfig {
         return sessionFactory.getObject();
     }
 
-    /**
-     * 配置Druid监控
-     * web：http://localhost:8082/druid
-     * @return ServletRegistrationBean
-     * 原文链接：https://blog.csdn.net/qq_27634797/article/details/100560118
-     */
-   /* @Bean
-    public ServletRegistrationBean servletRegistrationBean() {
-        ServletRegistrationBean<StatViewServlet> bean = new ServletRegistrationBean<>(new StatViewServlet(), "/druid/*");
-        Map<String, String> map = new HashMap<>();
-        map.put(StatViewServlet.PARAM_NAME_USERNAME, "lpp");  //访问的用户名密码
-        map.put(StatViewServlet.PARAM_NAME_PASSWORD, "123456");
-        //允许访问的ip，默认是所有ip
-        map.put(StatViewServlet.PARAM_NAME_ALLOW, "");
-        //禁止访问的ip
-        // map.put(StatViewServlet.PARAM_NAME_DENY, "192.168.1.1");
-        bean.setInitParameters(map);
-        return bean;
-    }
-
-    @Bean
-    public FilterRegistrationBean filterRegistrationBean() {
-        FilterRegistrationBean<WebStatFilter> bean = new FilterRegistrationBean<>();
-        bean.setFilter(new WebStatFilter());
-        Map<String, String> map = new HashMap<>();
-        //移除这些监听
-        map.put(WebStatFilter.PARAM_NAME_EXCLUSIONS, "*.js,*.css,/druid/*,*.gif,*.jpg,*.png");
-        bean.setInitParameters(map);
-        //拦截所有请求，全部都要走druid监听
-        bean.setUrlPatterns(Collections.singletonList("/*"));
-        return bean;
-        //原文链接：https://blog.csdn.net/qq_27634797/article/details/100560118
-    }*/
 }
