@@ -8,8 +8,6 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-
-    <groupId>com.example.demo</groupId> <!--项目的唯一标识 -->
     <artifactId>mybatis-learning</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-mybatis-learning</name>
@@ -17,14 +15,9 @@
 
     <properties>
         <java.version>11</java.version>
-        <spring-cloud.version>2020.0.4-SNAPSHOT</spring-cloud.version>
     </properties>
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-            <version>3.0.3</version>
-        </dependency>
+
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -35,13 +28,6 @@
     </dependencies>
     <dependencyManagement>  <!--作用：用于引入的父类，只要其中只需要的jar避免全部引入的情况-->
         <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 
