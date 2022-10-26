@@ -1,7 +1,7 @@
 package com.example.common.基础.多线程;
 
-public class MuRunnable implements Runnable{
-    private  int a=5;
+public class MuRunnable implements Runnable {
+    private int a = 5;
 
 
     @Override

@@ -5,12 +5,12 @@ public class Generic<a> {
 
     public a value;
 
-    public  Generic(a value){
-        this.value=value;
+    public Generic(a value) {
+        this.value = value;
 
     }
 
-    public  a getValue(){
-        return  value;
+    public a getValue() {
+        return value;
     }
 }

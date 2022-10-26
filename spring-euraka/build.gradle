@@ -1,0 +1,5 @@
+plugins {
+    id 'com.example.demo.java-conventions'
+}
+
+description = 'spring-euraka'

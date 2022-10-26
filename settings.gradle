@@ -1,0 +1,13 @@
+pluginManagement {
+    repositories {
+        maven {
+            url: 'https://repo.maven.apache.org/maven2'
+        }
+
+    }
+}
+rootProject.name = 'springbootProject'
+include(':mybatis-learning')
+include(':common')
+include(':spring-eureka')
+include(':spring-hystrix')

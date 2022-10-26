@@ -14,8 +14,8 @@ public class 动态代理Run {
 
         System.out.printf("================2==================================");
         //测试代理2
-        IUserDao userDao=new UserDao();
-        IUserDao proxy=new 动态代理方法2(userDao).createProxy();
+        IUserDao userDao = new UserDao();
+        IUserDao proxy = new 动态代理方法2(userDao).createProxy();
         proxy.insert();
         proxy.delete();
         proxy.update();
@@ -23,8 +23,8 @@ public class 动态代理Run {
 
         System.out.printf("================3==================================");
 
-        IUserDao userDao1=new UserDao();
-        IUserDao proxy2= (IUserDao) new Cglib代理(userDao1).getProxyInstance();
+        IUserDao userDao1 = new UserDao();
+        IUserDao proxy2 = (IUserDao) new Cglib代理(userDao1).getProxyInstance();
         System.out.println(proxy2.getClass()); //输出结果:class com.sun.proxy.$Proxy0  内存中动态生成的代理对象
 
         proxy2.insert();  //调用方法前，会先调用Cglib代理 里面的 intercept

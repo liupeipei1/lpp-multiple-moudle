@@ -1,11 +1,11 @@
 package com.example.common.基础.设计模式;
 
-public class UserDao  implements IUserDao {
+public class UserDao implements IUserDao {
 
 
     @Override
     public void save() {
-            System.out.println("----已经保存数据!(目标类的实现)----");
+        System.out.println("----已经保存数据!(目标类的实现)----");
     }
 
     @Override
@@ -28,7 +28,7 @@ public class UserDao  implements IUserDao {
 
     @Override
     public void query(int a) {
-        System.out.println("----已经query数据!(目标类的实现)----"+a);
+        System.out.println("----已经query数据!(目标类的实现)----" + a);
 
     }
 

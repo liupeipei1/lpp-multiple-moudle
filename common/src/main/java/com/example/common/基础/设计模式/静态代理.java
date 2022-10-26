@@ -16,15 +16,15 @@ public class 静态代理 implements com.example.common.基础.设计模式.IUse
 
 
     //代理对象:UserDaoProxy.java
-     public  静态代理(com.example.common.基础.设计模式.IUserDao IUserDao){
-         this.IUserDao=IUserDao;
-     }
+    public 静态代理(com.example.common.基础.设计模式.IUserDao IUserDao) {
+        this.IUserDao = IUserDao;
+    }
 
     @Override
     public void save() {
-            System.out.println("开始事务...");
-            IUserDao.save();//执行目标对象的方法
-            System.out.println("提交事务...");
+        System.out.println("开始事务...");
+        IUserDao.save();//执行目标对象的方法
+        System.out.println("提交事务...");
 
     }
 

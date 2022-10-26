@@ -21,7 +21,7 @@ import java.sql.SQLException;
 @Configuration
 // 扫描 Mapper 接口并容器管理
 @MapperScan(basePackages = ClusterDataSourceConfig.PACKAGE, sqlSessionFactoryRef = "clusterSqlSessionFactory")
-public class ClusterDataSourceConfig{
+public class ClusterDataSourceConfig {
     static final String MAPPER_LOCATION = "classpath:mapper/cluster/*.xml";
     static final String PACKAGE = "com.example.Dao.second"; //mapper文件夹
 

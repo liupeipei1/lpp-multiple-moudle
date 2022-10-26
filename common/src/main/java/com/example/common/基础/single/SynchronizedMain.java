@@ -1,17 +1,16 @@
 package com.example.common.基础.single;
 
 
-public class SynchronizedMain  implements  Runnable{
-
+public class SynchronizedMain implements Runnable {
 
 
     @Override
     public void run() {
         LazySingleton tt = LazySingleton.getInstance();
-        System.out.println("AA"+tt);
+        System.out.println("AA" + tt);
 
         HungruySingleton ll = HungruySingleton.getInstance();
-        System.out.println("AA1"+ll);
+        System.out.println("AA1" + ll);
 
 
     }

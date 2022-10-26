@@ -22,17 +22,17 @@ import java.util.List;
 public class Mybatistest {
     public static void main(String[] args) throws IOException {
 
-       InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml");
+        InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml");
         SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(inputStream);
         SqlSession sqlSession = factory.openSession();
         String name = "tom";
-      //  List<User> list = sqlSession.selectList("com.demo.mapper.UserMapper.getUserByName",name);
+        //  List<User> list = sqlSession.selectList("com.demo.mapper.UserMapper.getUserByName",name);
 
-        InputStream  inputStream1 =Resources.getResourceAsStream("mybatis-config.xml");  //读取xml信息
-        SqlSessionFactory sqlSessionFactory=new SqlSessionFactoryBuilder().build(inputStream1 );
-        SqlSession  session=sqlSessionFactory.openSession();
-        UserMaper userMaper= session.getMapper(UserMaper.class);   //mapper名字
-        List<Userinfo> getList =userMaper.getUser("name");
+        InputStream inputStream1 = Resources.getResourceAsStream("mybatis-config.xml");  //读取xml信息
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream1);
+        SqlSession session = sqlSessionFactory.openSession();
+        UserMaper userMaper = session.getMapper(UserMaper.class);   //mapper名字
+        List<Userinfo> getList = userMaper.getUser("name");
 
 
     }

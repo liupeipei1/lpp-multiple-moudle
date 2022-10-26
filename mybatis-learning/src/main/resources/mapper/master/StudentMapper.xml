@@ -3,18 +3,19 @@
 <mapper namespace="com.example.Dao.master.StudentMapper">
 
     <select id="getStudent" resultType="com.example.Response.Student" parameterType="string">
-       select  * from student   where name = #{name}
+        select * from student where name = #{name}
     </select>
-    
+
     <insert id="insertStudent" parameterType="com.example.Response.Student">
-        insert into student (id,name,age,course) values(student_seq.Nextval,#{name,jdbcType=VARCHAR},#{age,jdbcType=NUMERIC},#{course,jdbcType=VARCHAR})
+        insert into student (id,name,age,course)
+        values(student_seq.Nextval,#{name,jdbcType=VARCHAR},#{age,jdbcType=NUMERIC},#{course,jdbcType=VARCHAR})
     </insert>
 
-    <update id="updateStudent"  parameterType="com.example.Response.Student">
+    <update id="updateStudent" parameterType="com.example.Response.Student">
         update student a set a.name=#{name},a.age=#{age},a.course=#{course} where a.id=#{id}
     </update>
-    
+
     <delete id="deleteStudent">
-      delete  from  student a where  a.id=#{id}
+        delete from student a where a.id=#{id}
     </delete>
 </mapper>

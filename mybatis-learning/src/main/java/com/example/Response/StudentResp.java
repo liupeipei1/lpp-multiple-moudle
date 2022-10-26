@@ -10,7 +10,7 @@ import java.util.List;
 2021/6/24
 */
 @Data
-@ApiModel(value = "学生出参Resp",description = "student输出响应")
-public class StudentResp    {
-    List<Student>  Student;
+@ApiModel(value = "学生出参Resp", description = "student输出响应")
+public class StudentResp {
+    List<Student> Student;
 }

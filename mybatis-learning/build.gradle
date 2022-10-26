@@ -1,0 +1,9 @@
+plugins {
+    id 'com.example.demo.java-conventions'
+}
+
+dependencies {
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:3.0.3'
+}
+
+description = 'spring-mybatis-learning'

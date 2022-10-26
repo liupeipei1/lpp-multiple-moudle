@@ -11,7 +11,7 @@ public class testBlockingQueue {
         ArrayBlockingQueue arrayBlockingQueue = new ArrayBlockingQueue(2);
         arrayBlockingQueue.add("1");
         //arrayBlockingQueue.offer("222");
-        arrayBlockingQueue.offer("333", 1000,TimeUnit.MILLISECONDS);
+        arrayBlockingQueue.offer("333", 1000, TimeUnit.MILLISECONDS);
 
         Iterator in = arrayBlockingQueue.iterator();
 

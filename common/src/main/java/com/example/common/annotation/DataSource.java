@@ -3,7 +3,7 @@ package com.example.common.annotation;
 
 import java.lang.annotation.*;
 
-@Target({ ElementType.METHOD, ElementType.TYPE })
+@Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Inherited //（标明注解可继承）

@@ -1,0 +1,5 @@
+plugins {
+    id 'com.example.demo.java-conventions'
+}
+
+rootProject.name = 'common'

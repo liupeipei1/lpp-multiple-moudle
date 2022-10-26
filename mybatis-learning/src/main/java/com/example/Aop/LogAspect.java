@@ -21,7 +21,7 @@ AccountService 接口的任意方法的执行：execution(* com.xyz.service.Acco
  */
 public class LogAspect {
 
-   // @Pointcut("execution(* com.example.springbootproject.Controller.TestController.*(..))")//TestController 接口的任意方法的执行
+    // @Pointcut("execution(* com.example.springbootproject.Controller.TestController.*(..))")//TestController 接口的任意方法的执行
     //@Pointcut("execution(* com.example.springbootproject.Controller.*.*(..))")//定义在Controller包里的任意方法的执行
     @Pointcut("execution(* com.example.Controller.*.*(..))")//定义在Controller包里所有类，所有的方法的任意方法的执行
     public void apilog() {
@@ -41,10 +41,10 @@ public class LogAspect {
     @Around("apilog()") //这里必须有返回对象，否则切面接口 void就会出现无返回
     public Object logArround(ProceedingJoinPoint joinPoint) throws Throwable {
         Object[] args = joinPoint.getArgs();
-        System.out.println("环绕前入参:"+JSON.toJSONString(args[0]));
+        System.out.println("环绕前入参:" + JSON.toJSONString(args[0]));
         System.out.println(joinPoint.getSignature());
         Object proceed = joinPoint.proceed();
-        System.out.println("出参："+JSON.toJSONString(proceed));
+        System.out.println("出参：" + JSON.toJSONString(proceed));
         System.out.println("环绕后");
         return proceed;
     }

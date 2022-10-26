@@ -4,6 +4,7 @@ public class FutureData implements Data {
 
     protected RealData realdata = null;
     protected boolean isReady = false;
+
     public synchronized void setRealData(RealData realdata) {
         if (isReady) {
             return;
@@ -13,6 +14,7 @@ public class FutureData implements Data {
         //RealData已经被注入，通知getResult()
         notifyAll();
     }
+
     //会等待RealData构造完成
     @Override
     public synchronized String getResult() {

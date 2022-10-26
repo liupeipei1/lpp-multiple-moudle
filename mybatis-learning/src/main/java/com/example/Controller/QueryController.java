@@ -25,7 +25,7 @@ public class QueryController {
     private UserMaper userMaper;
 
     @Resource
-     private DoService doService;
+    private DoService doService;
 
 
     @ApiOperation(value = "查询接口", httpMethod = "GET", notes = "json查询") //注意这里的httpMethod=后面是必须大写 不能写成Get 否则后台报错
@@ -35,10 +35,10 @@ public class QueryController {
     }
 
 
-    @ApiOperation(value = "查询studnet接口", httpMethod = "GET", notes = "查询学生信息" ,response = StudentResp.class)
+    @ApiOperation(value = "查询studnet接口", httpMethod = "GET", notes = "查询学生信息", response = StudentResp.class)
     @GetMapping("/getStudent/{name}")
     public StudentResp getstudent(@RequestBody @PathVariable(name = "name") String name) {
-        StudentResp  studentResp=new StudentResp();
+        StudentResp studentResp = new StudentResp();
         studentResp.setStudent(doService.getStudent(name));
         return studentResp;
     }

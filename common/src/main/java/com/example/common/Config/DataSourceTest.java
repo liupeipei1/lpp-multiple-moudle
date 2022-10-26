@@ -13,12 +13,12 @@ import java.sql.SQLException;
 public class DataSourceTest {
 
     @Autowired
-    private DataSource  dataSource;
+    private DataSource dataSource;
 
     @Test
-    public void  setDataSource() throws SQLException {
-        System.out.printf("!!"+dataSource.getConnection());
+    public void setDataSource() throws SQLException {
+        System.out.printf("!!" + dataSource.getConnection());
     }
 
-    
+
 }

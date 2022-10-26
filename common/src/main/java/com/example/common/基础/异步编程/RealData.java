@@ -1,12 +1,12 @@
 package com.example.common.基础.异步编程;
 
-public class RealData  implements Data {
+public class RealData implements Data {
     protected final String result;
 
     public RealData(String para) {
         System.out.println("RealData start " + System.currentTimeMillis());
 
-        StringBuffer sb=new StringBuffer();
+        StringBuffer sb = new StringBuffer();
         //假设这里很慢很慢，构造RealData不是一个容易的事
         for (int i = 0; i < 10; i++) {
             sb.append(para);
@@ -17,7 +17,7 @@ public class RealData  implements Data {
             e.printStackTrace();
         }
         System.out.println("RealData end " + System.currentTimeMillis());
-        result =sb.toString();
+        result = sb.toString();
     }
 
     @Override

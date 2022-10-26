@@ -4,7 +4,7 @@ public class SyncMethod {
     public int i;
     private static int aa;
 
-    public synchronized void syncTask(){
+    public synchronized void syncTask() {
         i++;
     }
 }

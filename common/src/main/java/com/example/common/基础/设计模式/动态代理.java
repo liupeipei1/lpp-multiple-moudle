@@ -23,12 +23,13 @@ public class 动态代理 {
 
     //维护一个目标对象
     private Object target;
-    public 动态代理(Object target){
-        this.target=target;
+
+    public 动态代理(Object target) {
+        this.target = target;
     }
 
     //给目标对象生成代理对象
-    public Object getProxyInstance(){
+    public Object getProxyInstance() {
         return Proxy.newProxyInstance(
                 target.getClass().getClassLoader(),
                 target.getClass().getInterfaces(),

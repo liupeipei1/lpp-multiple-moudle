@@ -11,21 +11,21 @@ import java.util.List;
 public class DoService {
 
     @Resource
-    private StudentMapper  studentMapper;
+    private StudentMapper studentMapper;
 
-    public List<Student> getStudent(String  name){
-        return  studentMapper.getStudent(name);
+    public List<Student> getStudent(String name) {
+        return studentMapper.getStudent(name);
     }
 
-    public void  insertStudent (Student  student){
-          studentMapper.insertStudent(student);
+    public void insertStudent(Student student) {
+        studentMapper.insertStudent(student);
     }
 
-    public  void  updateStudent(Student student){
+    public void updateStudent(Student student) {
         studentMapper.updateStudent(student);
     }
 
-    public  void deleteStudent(int id){
+    public void deleteStudent(int id) {
         studentMapper.deleteStudent(id);
     }
 }

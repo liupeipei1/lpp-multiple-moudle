@@ -6,7 +6,7 @@ import java.util.concurrent.Future;
 
 public class ExecutorDo {
 
-    static  void aa() throws InterruptedException {
+    static void aa() throws InterruptedException {
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         Future<String> future = (Future<String>) executorService.submit(() -> {
             System.out.printf("这里是线程要执行的内容1111");
