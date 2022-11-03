@@ -1,3 +1,4 @@
+/*
 pluginManagement {
     repositories {
         maven {
@@ -6,4 +7,4 @@ pluginManagement {
 
     }
 }
-rootProject.name = 'spring-boot-hystrix'
+*/

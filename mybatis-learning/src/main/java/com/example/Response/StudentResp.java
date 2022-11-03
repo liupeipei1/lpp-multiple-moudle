@@ -13,4 +13,8 @@ import java.util.List;
 @ApiModel(value = "学生出参Resp", description = "student输出响应")
 public class StudentResp {
     List<Student> Student;
+
+    public void setStudent(List<Student> student) {
+        this.Student = student;
+    }
 }

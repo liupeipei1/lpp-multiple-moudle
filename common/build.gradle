@@ -1,5 +1,21 @@
 plugins {
-    id 'com.example.demo.java-conventions'
+    id 'java'
 }
 
-rootProject.name = 'common'
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //  <!--redis引入-->
+    implementation 'redis.clients:jedis:4.3.1'
+    //  <!--用于aop切面编程 使用AOP织入，需要导入一个依赖包-->
+    // implementation 'org.aspectj:aspectjweaver:1.9.9.1'
+}
+
+test {
+    useJUnitPlatform()
+}
