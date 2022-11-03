@@ -8,22 +8,27 @@ repositories {
     maven{ url 'https://maven.aliyun.com/repository/gradle-plugin'}
 }
 subprojects{
+    ext {
+        springBootVersion='2.7.5'
+        swaggerVersion='3.0.0'
+
+    }
+    // 配置依赖排除规则，排除所有该依赖
+   /* configurations.all{
+        exclude group:'net.bytebuddy',module:'byte-buddy'
+    }*/
     ///* java是Gradle的核心插件，是内置的，内置插件不需要配置依赖路径
     apply plugin: 'java'
     dependencies {
-        implementation 'org.springframework.boot:spring-boot-starter:2.6.7'
-        implementation 'org.springframework.boot:spring-boot-starter-test:2.6.7'
+        implementation ("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
         // <!--用于RestController注解使用 必须引入该jar-->
-        implementation 'org.springframework.boot:spring-boot-starter-web:2.6.7'
+        implementation "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
         // <!--swagger 用于界面显示 -->
-        implementation 'io.springfox:springfox-swagger-ui:2.9.2'
-        // <!--是注解 @EnableSwagger2-->
-        implementation 'io.springfox:springfox-swagger2:2.9.2'
-        // <!--swagger 用于引入 APIOperation    Api注解  用于展示接口文档 -->
-        implementation 'io.swagger:swagger-annotations:1.5.12'
+        implementation ("io.springfox:springfox-swagger-ui:$swaggerVersion")
+        // <!--是注解 @EnableSwagger2,子jar带有swagger-annotations 用于引入 APIOperation    Api注解  用于展示接口文档-->
+        implementation ("io.springfox:springfox-swagger2:$swaggerVersion")
         //    <!--用于JSON.toJSonString 方法使用-->
         implementation 'com.saygoer:fastjson:1.1-unwrap'
-
         //   <!--jexl引入 支持算法 -->
         implementation 'commons-jexl:commons-jexl:1.1'
         // <!--用于服务调用的时候熔断机制-->
@@ -40,8 +45,11 @@ subprojects{
         implementation 'org.aspectj:aspectjweaver:1.9.9.1'
         implementation 'org.projectlombok:lombok:1.18.22'
 
-
     }
+  /*  configurations {
+        //移除spring boot 默认logger依赖
+        all*.exclude module: 'spring-boot-starter-logging'
+    }*/
 }
 
 dependencies {

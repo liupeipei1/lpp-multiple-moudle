@@ -25,8 +25,8 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("身份认证服务")
-                .description("提供统一的身份认证与身份验证服务")
+                .title("Swagger Test App Restful API")
+                .description("swagger test app restful api")
                 .termsOfServiceUrl("http://www.baidu.com")
                 .version("0.0.1")
                 .build();
