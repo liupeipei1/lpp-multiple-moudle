@@ -1,8 +1,8 @@
 package com.example.common.基础.设计模式;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class CglibMainRun {
+public class CglibMainRunTest {
     @Test
     public void test() {
         //目标对象
