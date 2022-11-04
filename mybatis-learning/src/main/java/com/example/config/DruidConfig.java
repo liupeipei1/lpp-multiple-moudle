@@ -2,13 +2,11 @@ package com.example.config;
 
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
-import com.google.common.collect.Maps;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -27,7 +25,7 @@ public class DruidConfig {
     public ServletRegistrationBean staticViewServlet() {
 
         ServletRegistrationBean bean = new ServletRegistrationBean(new StatViewServlet(), "/druid/*");
-        Map<String, String> initParams = Maps.newHashMapWithExpectedSize(4);
+        Map<String, String> initParams = new HashMap<>(4);
         initParams.put("loginUsername", "admin");
         initParams.put("loginPassword", "1234");
         initParams.put("allow", "");

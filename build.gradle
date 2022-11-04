@@ -56,5 +56,5 @@ dependencies {
     implementation project("common")
     implementation project("mybatis-learning")
     implementation project("spring-boot-hystrix")
-    implementation project("spring-euraka")
+    implementation project("spring-eureka")
 }
