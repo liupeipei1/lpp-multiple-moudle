@@ -18,7 +18,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.example.springbootproject")) // 配置需要扫描的包路径
+                .apis(RequestHandlerSelectors.basePackage("com.example.common")) // 配置需要扫描的包路径
                 .paths(PathSelectors.any())
                 .build();
     }

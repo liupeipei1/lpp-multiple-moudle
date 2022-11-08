@@ -29,15 +29,15 @@ public class QueryController {
 
 
     @ApiOperation(value = "查询接口", httpMethod = "GET", notes = "json查询") //注意这里的httpMethod=后面是必须大写 不能写成Get 否则后台报错
-    @GetMapping("/bb")
-    public ClientDTo aa(@RequestBody @Validated ClientDTo clientDTo) {
+    @GetMapping("/getClientDto")
+    public ClientDTo getClientDTo(@RequestBody @Validated ClientDTo clientDTo) {
         return clientDTo;
     }
 
 
     @ApiOperation(value = "查询studnet接口", httpMethod = "GET", notes = "查询学生信息", response = StudentResp.class)
     @GetMapping("/getStudent/{name}")
-    public StudentResp getstudent(@RequestBody @PathVariable(name = "name") String name) {
+    public StudentResp getStudent(@RequestBody @PathVariable(name = "name") String name) {
         StudentResp studentResp = new StudentResp();
         studentResp.setStudent(doService.getStudent(name));
         return studentResp;

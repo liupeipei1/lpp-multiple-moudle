@@ -23,6 +23,8 @@ subprojects{
         implementation ("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
         // <!--用于RestController注解使用 必须引入该jar-->
         implementation "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+        //用于actuator检测
+        implementation "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}"
         // <!--swagger 用于界面显示 -->
         implementation ("io.springfox:springfox-swagger-ui:$swaggerVersion")
         // <!--是注解 @EnableSwagger2,子jar带有swagger-annotations 用于引入 APIOperation    Api注解  用于展示接口文档-->
@@ -44,6 +46,8 @@ subprojects{
         implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
         implementation 'org.aspectj:aspectjweaver:1.9.9.1'
         implementation 'org.projectlombok:lombok:1.18.22'
+
+
 
     }
   /*  configurations {
