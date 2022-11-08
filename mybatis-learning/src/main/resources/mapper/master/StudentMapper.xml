@@ -7,8 +7,8 @@
     </select>
 
     <insert id="insertStudent" parameterType="com.example.Response.Student">
-        insert into student (id,name,age,course)
-        values(student_seq.Nextval,#{name,jdbcType=VARCHAR},#{age,jdbcType=NUMERIC},#{course,jdbcType=VARCHAR})
+        insert into student (name,age,course)
+        values(#{name,jdbcType=VARCHAR},#{age,jdbcType=NUMERIC},#{course,jdbcType=VARCHAR})
     </insert>
 
     <update id="updateStudent" parameterType="com.example.Response.Student">

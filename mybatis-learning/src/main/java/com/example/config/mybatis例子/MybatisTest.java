@@ -19,7 +19,7 @@ import java.util.List;
 版权声明：本文为CSDN博主「Coder648」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
 原文链接：https://blog.csdn.net/weixin_43184769/article/details/91126687
  */
-public class Mybatistest {
+public class MybatisTest {
     public static void main(String[] args) throws IOException {
 
         InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml");

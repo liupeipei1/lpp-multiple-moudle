@@ -34,7 +34,7 @@ public class ClusterDataSourceConfig {
     @Value("${cluster.datasource.password}")
     private String password;
 
-    @Value("${cluster.datasource.driverClassName}")
+    @Value("${spring.datasource.driver-class-name}")
     private String driverClass;
 
 
