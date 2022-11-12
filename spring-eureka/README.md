@@ -1,4 +1,13 @@
-# springbootProject
-主要本地使用springboot+springcloud+mybatis框架
-**#mybatis-learning 实现druid+Euraka+swagger**
-https://blog.csdn.net/weixin_42057591/article/details/118328736?spm=1001.2014.3001.5501
+**# eureka使用**
+implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:3.1.4")
+启动类加上：@EnableEurekaServer
+properties文件：
+server.port=8084
+spring.application.name=lpp-spring-eureka
+eureka.instance.hostname=localhost
+eureka.client.fetch-registry=true
+eureka.client.register-with-eureka=true
+eureka.client.serviceUrl.defaultZone=http://${eureka.instance.hostname}:${server.port}/eureka/
+
+
+

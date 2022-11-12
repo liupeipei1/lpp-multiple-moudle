@@ -5,6 +5,8 @@ a.访问地址：http://localhost:8082/druid/login.html    admin/1234
 // <!-- druid 数据库连接池   -->
 `implementation 'com.alibaba:druid-spring-boot-starter:1.2.9'`
 **2.springboot actuator的使用**
+访问地址：[http://localhost:8082/actuator]
+health:[http://localhost:8082/actuator/health](http://localhost:8082/actuator/health)
 a. 引入jar 
 `org.springframework.boot:spring-boot-starter-actuator:2.6.11`
 b. application.property文件上加上下面配置
