@@ -9,7 +9,7 @@ import java.util.HashMap;
 public class TestStudentHashMap {
 
     public static void main(String[] args) {
-        HashMap<Student, Course> hashMap = new HashMap<>();
+       /* HashMap<Student, Course> hashMap = new HashMap<>();
         Student ss = new Student(1, "我我我哦", 18);
         Student ss2 = new Student(1, "我我我哦", 15);
         Student ss3 = new Student(1, "我我我哦", 17);
@@ -27,7 +27,7 @@ public class TestStudentHashMap {
         //获取小六的选课
         Course course = hashMap.get(new Student(1, "我我我哦", 15));
         System.out.printf("输出：" + course.courseName);
-
+*/
 
     }
 }

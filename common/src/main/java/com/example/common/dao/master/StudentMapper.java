@@ -1,6 +1,6 @@
-package com.example.Dao.master;
+package com.example.common.dao.master;
 
-import com.example.Entity.Student;
+import com.example.common.entity.Student;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 

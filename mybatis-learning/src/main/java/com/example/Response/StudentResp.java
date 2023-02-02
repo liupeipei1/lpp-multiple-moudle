@@ -1,5 +1,6 @@
 package com.example.Response;
 
+import com.example.Entity.Student;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 
@@ -12,7 +13,7 @@ import java.util.List;
 @Data
 @ApiModel(value = "学生出参Resp", description = "student输出响应")
 public class StudentResp {
-    List<Student> Student;
+    List<com.example.Entity.Student> Student;
 
     public void setStudent(List<Student> student) {
         this.Student = student;

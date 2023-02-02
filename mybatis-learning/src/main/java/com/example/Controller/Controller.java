@@ -1,6 +1,6 @@
 package com.example.Controller;
 
-import com.example.Response.Student;
+import com.example.Entity.Student;
 import com.example.Service.DoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

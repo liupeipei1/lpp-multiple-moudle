@@ -1,6 +1,6 @@
 package com.example.Dao.second;
 
-import com.example.Response.Userinfo;
+import com.example.Entity.Userinfo;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
