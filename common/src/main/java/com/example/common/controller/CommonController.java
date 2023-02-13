@@ -10,7 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.InputStream;
 import java.util.List;
 /*
-用于常用的借口调用
+用于常用的接口调用
 1. redis调用
 2. excel的导入导出功能
 3.
