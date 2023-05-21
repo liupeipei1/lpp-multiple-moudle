@@ -61,4 +61,6 @@ dependencies {
     implementation project("mybatis-learning")
     implementation project("spring-boot-hystrix")
     implementation project("spring-eureka")
+    implementation project("lpp-cache")
+
 }

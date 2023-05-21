@@ -55,6 +55,7 @@ public class MasterDataSourceConfig {
     @Bean(name = "masterDataSource") //方法1：
     @Primary
     public DataSource masterDataSource() throws SQLException {
+        //DataSourceBuilder.create().url(url).password(password).driverClassName(driverClass).username(user);  也可以使用这样的方式组装datasource
         DruidDataSource dataSource = new DruidDataSource();
         dataSource.setDriverClassName(driverClass);
         dataSource.setUrl(url);

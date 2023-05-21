@@ -3,3 +3,5 @@ include 'mybatis-learning'
 include 'common'
 include 'spring-eureka'
 include 'spring-boot-hystrix'
+include 'lpp-cache'
+

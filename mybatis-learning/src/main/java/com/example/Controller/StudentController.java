@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 
 @Api(tags = "本地接口文档", value = "/aa", description = "本地接口文档")
 @RestController
-public class Controller {
+public class StudentController {
 
     @Resource
     private DoService doService;
