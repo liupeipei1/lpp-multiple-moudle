@@ -19,7 +19,7 @@ import java.util.List;
 @RestController
 public class CommonController {
 
-    @RequestMapping("/toImport")//跳转到impotExcel.html界面
+    @RequestMapping("/toImport")
     public String toImport(){
         return "importExcel";
     }
