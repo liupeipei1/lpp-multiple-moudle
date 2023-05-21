@@ -15,12 +15,12 @@ pipeline {
                 sh './gradlew check'
                 echo 'Testing..'
             }
-        }
-        post {
-            always {
-              //  junit 'build/reports/**/*.xml'
-            }
         } */
+        //post {
+           // always {
+              //  junit 'build/reports/**/*.xml'
+          //  }
+       // }
         stage('Deploy') {
              when {
                       expression {
