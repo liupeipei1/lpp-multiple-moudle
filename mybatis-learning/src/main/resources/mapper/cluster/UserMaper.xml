@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.Dao.second.UserMaper">
 
-    <select id="getUser" resultType="com.example.Response.Userinfo" parameterType="string">
+    <select id="getUser" resultType="com.example.Entity.Userinfo" parameterType="string">
         SELECT * from userinfo where usernam = #{name}
     </select>
 

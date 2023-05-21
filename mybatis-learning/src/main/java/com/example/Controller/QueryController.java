@@ -1,9 +1,9 @@
 package com.example.Controller;
 
 import com.example.Dao.second.UserMaper;
-import com.example.Response.ClientDTo;
+import com.example.Entity.ClientDTo;
 import com.example.Response.StudentResp;
-import com.example.Response.Userinfo;
+import com.example.Entity.Userinfo;
 import com.example.Service.DoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

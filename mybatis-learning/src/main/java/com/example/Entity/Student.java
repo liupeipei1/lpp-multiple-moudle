@@ -1,4 +1,4 @@
-package com.example.Response;
+package com.example.Entity;
 
 import io.swagger.annotations.ApiModel;
 import lombok.Data;

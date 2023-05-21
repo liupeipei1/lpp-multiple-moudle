@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.Dao.master.StudentMapper">
-
-    <select id="getStudent" resultType="com.example.Entity.Student" parameterType="string">
+<mapper namespace="com.example.common.dao.master.StudentMapper">
+    <select id="getStudent" resultType="com.example.common.entity.Student" parameterType="string">
         select * from student where name = #{name}
     </select>
-
-    <insert id="insertStudent" parameterType="com.example.Entity.Student">
+    <insert id="insertStudent" parameterType="com.example.common.entity.Student">
         insert into student (name,age,course)
         values(#{name,jdbcType=VARCHAR},#{age,jdbcType=NUMERIC},#{course,jdbcType=VARCHAR})
     </insert>
 
-    <update id="updateStudent" parameterType="com.example.Entity.Student">
+    <update id="updateStudent" parameterType="com.example.common.entity.Student">
         update student a set a.name=#{name},a.age=#{age},a.course=#{course} where a.id=#{id}
     </update>
 
