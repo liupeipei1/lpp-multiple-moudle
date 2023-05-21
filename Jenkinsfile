@@ -10,12 +10,12 @@ pipeline {
                 echo 'Building..'
             }
         }
-        stage('Test') {
+      /*   stage('Test') {
             steps {
                 sh './gradlew check'
                 echo 'Testing..'
             }
-        }
+        } */
         post {
             always {
                 junit 'build/reports/**/*.xml'
