@@ -14,7 +14,12 @@ dependencies {
     implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:3.1.4")
 
 }
-
+jar{
+    enabled(true)
+}
+bootJar{
+    archivesBaseName("spring-boot-hystrix.jar")
+}
 test {
     useJUnitPlatform()
 }
