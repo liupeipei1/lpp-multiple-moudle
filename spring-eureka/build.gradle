@@ -15,9 +15,11 @@ dependencies {
 
 }
 jar{
-
+    enabled(true)
 }
-
+bootJar{
+    archivesBaseName("spring-eureka.jar")
+}
 test {
     useJUnitPlatform()
 }
