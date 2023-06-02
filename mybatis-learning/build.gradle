@@ -19,7 +19,7 @@ jar{
     enabled(true)
 }
 bootJar{
-    archivesBaseName(".mybatis-learning.jar")
+    archivesBaseName("mybatis-learning.jar")
 }
 
 test {

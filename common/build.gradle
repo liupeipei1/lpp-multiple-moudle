@@ -1,14 +1,11 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.1.0'
+    id 'org.springframework.boot' version latest
 }
-
-group 'org.example'
-version '1.0-SNAPSHOT'
 
 repositories {
     maven {
-        url = uri("https://plugins.gradle.org/m2/")
+        mavenCentral()
     }
 }
 
@@ -20,11 +17,11 @@ dependencies {
 }
 
 jar{
- archiveName()
+enabled(false)
 }
 
 bootjar{
-
+archivesBaseName("commom.jar")
 }
 test {
     useJUnitPlatform()
