@@ -1,5 +1,9 @@
 pipeline {
     agent any
+     tools {
+            gradle 'gradle'
+            jdk 'jdk17'
+        }
     stages {
         stage('Build') {
             steps {
