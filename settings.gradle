@@ -1,0 +1,8 @@
+rootProject.name = 'lpp-multiple-moudle'
+include 'common'
+include 'lpp-cache'
+include 'mybatis-learning'
+include 'spring-boot-hystrix'
+include 'spring-eureka'
+
+
