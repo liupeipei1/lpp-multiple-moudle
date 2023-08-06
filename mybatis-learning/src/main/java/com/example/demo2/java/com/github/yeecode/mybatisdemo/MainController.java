@@ -1,5 +1,4 @@
-package com.github.yeecode.mybatisdemo;
-
+package com.example.demo2.java.com.github.yeecode.mybatisdemo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

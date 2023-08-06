@@ -21,8 +21,8 @@ jar{
     enabled(true)
 }
 
-bootJar{
-    archiveClassifier = 'mybatis-learning'
+tasks.bootJar{
+    archiveClassifier = 'bot'
 }
 test {
     useJUnitPlatform()

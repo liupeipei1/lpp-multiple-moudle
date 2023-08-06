@@ -1,8 +1,9 @@
-package com.github.yeecode.mybatisdemo;
+package com.example.demo2.java.com.github.yeecode.mybatisdemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/*
 @SpringBootApplication
 public class MybatisdemoApplication {
 
@@ -11,4 +12,4 @@ public class MybatisdemoApplication {
         System.out.println("Via http://127.0.0.1:8099/ to trigger this demo.");
     }
 
-}
+}*/

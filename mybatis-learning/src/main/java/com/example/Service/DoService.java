@@ -1,10 +1,8 @@
 package com.example.Service;
-
 import com.example.Dao.master.StudentMapper;
 import com.example.Entity.Student;
+import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
 import java.util.List;
 
 @Service
