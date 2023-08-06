@@ -1,11 +1,15 @@
 plugins {
     id 'java'
+   // id 'org.springframework.boot' version '3.1.2'
+
 }
+//apply plugin: 'io.spring.dependency-management'
 
 group 'org.example'
 version '1.0-SNAPSHOT'
 
 repositories {
+    maven{ url 'https://repo.maven.apache.org/maven2'}
     mavenCentral()
 }
 
@@ -18,8 +22,10 @@ jar{
     enabled(true)
 }
 bootJar{
-    archivesBaseName("spring-boot-hystrix.jar")
+    archiveClassifier = 'boot'
 }
+
+
 test {
     useJUnitPlatform()
 }

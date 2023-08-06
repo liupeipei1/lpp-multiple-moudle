@@ -1,12 +1,11 @@
-plugins {
+/*plugins {
     id 'java'
-    id 'org.springframework.boot' version latest
-}
+    id 'org.springframework.boot' version '2.6.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}*/
 
 repositories {
-    maven {
-        mavenCentral()
-    }
+    mavenCentral()
 }
 
 dependencies {
@@ -17,12 +16,13 @@ dependencies {
 }
 
 jar{
-enabled(false)
+  enabled(false)
 }
 
-bootjar{
-archivesBaseName("commom.jar")
+bootJar{
+    archiveClassifier = 'boot'
 }
+
 test {
     useJUnitPlatform()
 }
