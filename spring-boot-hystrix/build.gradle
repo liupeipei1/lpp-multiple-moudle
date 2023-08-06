@@ -19,12 +19,11 @@ dependencies {
 
 }
 jar{
-    enabled(true)
+    enabled(false)
 }
-bootJar{
-    archiveClassifier = 'boot'
+tasks.bootJar{
+    archiveClassifier = 'bot'
 }
-
 
 test {
     useJUnitPlatform()

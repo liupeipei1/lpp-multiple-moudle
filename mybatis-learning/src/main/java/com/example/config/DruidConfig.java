@@ -21,7 +21,7 @@ import java.util.Map;
 @Configuration
 public class DruidConfig {
 
-    @Bean
+  /*  @Bean
     public ServletRegistrationBean staticViewServlet() {
 
         ServletRegistrationBean bean = new ServletRegistrationBean(new StatViewServlet(), "/druid/*");
@@ -32,9 +32,9 @@ public class DruidConfig {
         initParams.put("deny", "");
         bean.setInitParameters(initParams);
         return bean;
-    }
+    }*/
 
-    @Bean
+   /* @Bean
     public FilterRegistrationBean webStaticFilter() {
         FilterRegistrationBean<WebStatFilter> bean = new FilterRegistrationBean<>();
         bean.setFilter(new WebStatFilter());
@@ -45,6 +45,6 @@ public class DruidConfig {
         //拦截所有请求，全部都要走druid监听
         bean.setUrlPatterns(Collections.singletonList("/*"));
         return bean;
-    }
+    }*/
 
 }
