@@ -1,6 +1,7 @@
-package org.example.jvm;
+package org.example.controller.jvm;
 
 import lombok.extern.slf4j.Slf4j;
+import org.example.anotation.LoggerForLpp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CacheEvict;
@@ -31,13 +32,11 @@ public class CommonCacheManageController {
     //测试缓存insert
     @Cacheable(value = "cacheSomething", key = "#inPara")
     @GetMapping(value = "/cacheSomething")
+    @LoggerForLpp
     public ResponseEntity<?> cacheSomething(String inPara){
         try {
-
-            System.out.printf("111----server:"+ environment.getProperty("spring.application.name")+"--method:cacheSomething");
-            ResponseEntity<?> cacheValue= (ResponseEntity<?>) cacheManager.getCache("cacheSomething").get(inPara);
-            ifExistInCaChe(cacheValue);
-            ResponseEntity<?> responseEntity=new ResponseEntity<>(cacheValue,HttpStatus.OK);
+            //System.out.printf("111----server:"+ environment.getProperty("spring.application.name")+"--method:cacheSomething");
+            ResponseEntity<?> responseEntity=new ResponseEntity<>(inPara,HttpStatus.OK);
             return  responseEntity;
         } catch (Exception e) {
             //log.error("cache has some errors  e:"+ e);
