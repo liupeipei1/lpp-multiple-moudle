@@ -1,6 +1,6 @@
 package com.example.common.基础.多线程;
 
-public class MuRunnable implements Runnable {
+public class MyRunnable implements Runnable {
     private int a = 5;
 
 
