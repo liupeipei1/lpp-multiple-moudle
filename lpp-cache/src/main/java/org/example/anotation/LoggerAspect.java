@@ -1,6 +1,5 @@
 package org.example.anotation;
 
-import lombok.extern.apachecommons.CommonsLog;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -27,11 +26,11 @@ public class LoggerAspect {
         stopwatch.start();
         String method = joinPoint.getSignature().getName();//得到方法
         String className = joinPoint.getTarget().getClass().getSimpleName();
-        log.info("========" + className + "." + method + "====begin");
+      //  log.info("========" + className + "." + method + "====begin");
         Object obj = joinPoint.proceed();
         stopwatch.stop();
         double second = stopwatch.getTotalTimeSeconds();
-        log.info("========" + className + "." + method + "====end  耗时" + second);
+       // log.info("========" + className + "." + method + "====end  耗时" + second);
         return obj;
     }
 }
