@@ -21,16 +21,15 @@ public class LoggerAspect {
 
     @Around("annotionMethod()")
     public Object logMethod(ProceedingJoinPoint joinPoint) throws Throwable {
-
         StopWatch stopwatch = new StopWatch();
         stopwatch.start();
         String method = joinPoint.getSignature().getName();//得到方法
         String className = joinPoint.getTarget().getClass().getSimpleName();
-      //  log.info("========" + className + "." + method + "====begin");
+        log.info("========" + className + "." + method + "====begin");
         Object obj = joinPoint.proceed();
         stopwatch.stop();
         double second = stopwatch.getTotalTimeSeconds();
-       // log.info("========" + className + "." + method + "====end  耗时" + second);
+        log.info("========" + className + "." + method + "====end  耗时" + second);
         return obj;
     }
 }
