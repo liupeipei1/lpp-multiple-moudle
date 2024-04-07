@@ -1,7 +1,5 @@
 package com.example.common.基础.异步编程;
 
-import com.example.common.基础.异步编程.CompletableFutureDemo;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;

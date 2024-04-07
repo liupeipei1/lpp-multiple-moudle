@@ -17,9 +17,22 @@ configurations {
 }
 
 
-repositories {
-    mavenCentral()
+allprojects {
+    repositories {
+        maven {
+            url 'https://maven.aliyun.com/repository/public/'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/central'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/spring/'
+        }
+        mavenLocal()
+        mavenCentral()
+    }
 }
+
 
 subprojects{
 
@@ -44,6 +57,10 @@ subprojects{
         implementation ("io.springfox:springfox-swagger2:$swaggerVersion")
         //    <!--用于JSON.toJSonString 方法使用-->
         implementation 'com.saygoer:fastjson:1.1-unwrap'
+        implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+        implementation 'org.springframework.cloud:spring-cloud-starter-config'
+        implementation 'org.springframework.cloud:spring-cloud-config-server'
+
         //   <!--jexl引入 支持算法 -->
         implementation 'commons-jexl:commons-jexl:1.1'
 
