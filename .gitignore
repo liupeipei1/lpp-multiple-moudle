@@ -38,3 +38,4 @@ build/
 /spring-boot-hystrix/out/
 /spring-eureka/out/
 /lpp-cache/out/
+/spring-eureka-server/out/
