@@ -8,7 +8,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @SpringBootApplication(exclude = {GsonAutoConfiguration.class})
 @EnableDiscoveryClient
 //通过注解触发自动配置
-//通过注解触发自动配置
 public class MybatisApplication {
 
     public static void main(String[] args) {
