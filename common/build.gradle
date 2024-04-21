@@ -4,7 +4,15 @@ plugins {
 repositories {
     mavenCentral()
 }
+ext {
+    set('springCloudVersion', "2022.0.3")
+}
 
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
 dependencies {
     //  <!--redis引入-->
     implementation 'redis.clients:jedis:4.3.1'
