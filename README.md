@@ -1,6 +1,6 @@
 # lpp local mutiple springbootProject for testing
 ## 本地git地址
-本地项目地址：https://github.com/liupeipei1/lpp-multiple-moudle.git
+本地项目地址:https://github.com/liupeipei1/lpp-multiple-moudle.git
 主要本地使用springboot+springcloud+mybatis框架
 
 ## mybatis-learning 实现druid+Euraka+swagger**
