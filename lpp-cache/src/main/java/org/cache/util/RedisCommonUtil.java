@@ -1,6 +1,5 @@
-package org.example.util;
+package org.cache.util;
 
-import org.springframework.stereotype.Service;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.args.ListPosition;
 
@@ -10,7 +9,7 @@ import java.util.Map;
 /*
  用于redis 客户端调用工具包
  */
-@Service
+//@Service
 public class RedisCommonUtil {
 
     private Jedis jedis;
