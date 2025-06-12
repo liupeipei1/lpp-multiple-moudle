@@ -7,13 +7,13 @@ import java.util.Random;
 2023/11/29
 */
 public class ExecutorServiceTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         for (int i = 0; i < 10; i++) {
             setEmail();
         }
     }
 
-    public boolean setEmail() {
+    public static boolean setEmail() throws InterruptedException {
         Thread.sleep(1000);
         Random random=new Random();
        return random.nextBoolean();
