@@ -20,12 +20,12 @@ dependencies {
 }
 
 jar{
- archiveName()
+    archiveBaseName.set("common")
 }
 
-bootjar{
-
-}
+/*bootjar{
+    enabled = false
+}*/
 test {
     useJUnitPlatform()
 }

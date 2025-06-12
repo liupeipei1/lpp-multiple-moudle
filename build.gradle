@@ -9,7 +9,7 @@ repositories {
 }
 subprojects{
     ext {
-        springBootVersion='2.7.5'
+        springBootVersion='3.5.0'
         swaggerVersion='3.0.0'
 
     }
