@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    //  <!--hadoop-->
+    //<!-- Hadoop Client -->
     implementation 'org.apache.hadoop:hadoop-client:3.3.6'
 }
 

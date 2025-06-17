@@ -1,0 +1,16 @@
+##This  is  configuration  for hadoop
+spring:
+    application:
+      name: hadoop-demo
+    hadoop:
+      fs:
+        defaultFS: hdfs://master:9000
+      configuration:
+        fs.defaultFS: hdfs://master:9000
+        hadoop.tmp.dir: /opt/module/hadoop/data/tmp
+        dfs.replication: 1
+        dfs.namenode.name.dir: file:///opt/module/hadoop/data/namenode
+        dfs.datanode.data.dir: file:///opt/module/hadoop/data/datanode
+        dfs.namenode.checkpoint.dir: file:///opt/module/hadoop/data/namesecondary
+server:
+  port: 8084
