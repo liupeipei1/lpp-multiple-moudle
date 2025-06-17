@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //  <!--hadoop-->
+    implementation 'org.apache.hadoop:hadoop-client:3.3.6'
+}
+
+test {
+    useJUnitPlatform()
+}

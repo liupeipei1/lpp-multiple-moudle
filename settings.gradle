@@ -5,3 +5,5 @@ include 'spring-eureka'
 include 'spring-boot-hystrix'
 include 'lpp-cache'
 
+
+include 'hadoop-demo'
