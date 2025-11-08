@@ -17,8 +17,8 @@ public class 滑动窗口最大的值 {
     public static void main(String[] args) {
         int[] nums = {1, 3, -1, -3, 5, 3, 6, 7};
         int k = 3;
-        int[] nums1 = {1,-1};
-        int k1= 1;
+        int[] nums1 = {1, -1};
+        int k1 = 1;
         int[] result = maxSlidingWindow(nums, k);
         for (int num : result) {
             System.out.print(num + " \n");
@@ -30,6 +30,9 @@ public class 滑动窗口最大的值 {
         }
     }
 
+    /*  暴力解法  时间复杂度O(n*k)  空间复杂度O(1)
+        超过了最大的时间限制  不推荐
+     */
     public static int[] maxSlidingWindow(int[] nums, int k) {
         if (nums == null || nums.length == 0 || k <= 0) {
             return new int[0];
