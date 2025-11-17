@@ -1,7 +1,7 @@
 package com.example.common.基础.leetcode;
 
 import java.util.Arrays;
-
+// 给定一个未排序的整数数组，找出其中没有出现的最小的正整数。
 public class 缺失的第一个整数 {
     public static void main(String[] args) {
         int[] nums = {3, 4, -1, 1};
