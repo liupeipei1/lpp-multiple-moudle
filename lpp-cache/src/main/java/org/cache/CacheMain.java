@@ -6,8 +6,8 @@ import org.springframework.cache.annotation.EnableCaching;
 
 @EnableCaching
 @SpringBootApplication
-public class CacheMainApplication {
+public class CacheMain {
     public static void main(String[] args) {
-        SpringApplication.run(CacheMainApplication.class, args);
+        SpringApplication.run(CacheMain.class, args);
     }
 }
