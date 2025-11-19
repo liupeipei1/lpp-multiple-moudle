@@ -1,41 +1,32 @@
 plugins {
     id 'java'
-}
-repositories {
-    mavenCentral()
-}
-ext {
-    set('springCloudVersion', "2022.0.3")
+    id 'org.springframework.boot' version '3.1.0'
 }
 
-dependencyManagement {
-    imports {
-        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    maven {
+        url = uri("https://plugins.gradle.org/m2/")
     }
 }
+
 dependencies {
     //  <!--redis引入-->
     implementation 'redis.clients:jedis:4.3.1'
     //  <!-- AutoPoi Excel工具类-->
     implementation('org.jeecgframework:autopoi-web:1.4.4')
-
-    implementation 'mysql:mysql-connector-java:8.0.31'
-    //  <!-- Oracle驱动包  不添加，就没有驱动oracle.jdbc.OracleDriver-->
-    implementation 'com.oracle.database.jdbc:ojdbc8:21.7.0.0'
-    // <!-- druid 数据库连接池   -->
-    implementation 'com.alibaba:druid-spring-boot-starter:1.2.9'
-    // <!--mybatis支持包 -->
-    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
 }
 
 jar{
-    enabled(false)
-}
-//如果直接使用bootjar无法识别就使用tasks.bootJar
-tasks.bootJar{
-    archiveClassifier = 'bot'
+    archiveBaseName.set("common")
 }
 
+/*bootjar{
+    enabled = false
+}*/
 test {
     useJUnitPlatform()
 }

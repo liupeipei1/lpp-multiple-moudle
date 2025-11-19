@@ -24,7 +24,7 @@ public class DruidConfig {
   /*  @Bean
     public ServletRegistrationBean staticViewServlet() {
 
-        ServletRegistrationBean bean = new ServletRegistrationBean(new StatViewServlet(), "/druid/*");
+        ServletRegistrationBean bean = new ServletRegistrationBean();
         Map<String, String> initParams = new HashMap<>(4);
         initParams.put("loginUsername", "admin");
         initParams.put("loginPassword", "1234");
@@ -36,8 +36,7 @@ public class DruidConfig {
 
     @Bean
     public FilterRegistrationBean webStaticFilter() {
-        FilterRegistrationBean<WebStatFilter> bean = new FilterRegistrationBean<>();
-        bean.setFilter(new WebStatFilter());
+        FilterRegistrationBean bean = new FilterRegistrationBean<>();
         Map<String, String> map = new HashMap<>();
         //移除这些监听
         map.put(WebStatFilter.PARAM_NAME_EXCLUSIONS, "*.js,*.css,/druid/*,*.gif,*.jpg,*.png");
