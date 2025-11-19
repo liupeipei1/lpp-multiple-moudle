@@ -35,55 +35,59 @@ allprojects {
 
 
 subprojects{
+    ext {
+        springBootVersion='3.5.0'
+        swaggerVersion='3.0.0'
 
+    }
     // 配置依赖排除规则，排除所有该依赖
    /* configurations.all{
         exclude group:'net.bytebuddy',module:'byte-buddy'
     }*/
     ///* java是Gradle的核心插件，是内置的，内置插件不需要配置依赖路径
-    apply plugin:'org.springframework.boot'  //外层配置了设置版本，里面就可以不用
-    apply plugin:'io.spring.dependency-management'
-    apply plugin:'java'
-
+    apply plugin: 'java'
     dependencies {
-        implementation ("org.springframework.boot:spring-boot-starter-test")
+        implementation ("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
         // <!--用于RestController注解使用 必须引入该jar-->
-        implementation "org.springframework.boot:spring-boot-starter-web"
+        implementation "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
         //用于actuator检测
-        implementation "org.springframework.boot:spring-boot-starter-actuator"
+        implementation "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}"
         // <!--swagger 用于界面显示 -->
         implementation ("io.springfox:springfox-swagger-ui:$swaggerVersion")
         // <!--是注解 @EnableSwagger2,子jar带有swagger-annotations 用于引入 APIOperation    Api注解  用于展示接口文档-->
         implementation ("io.springfox:springfox-swagger2:$swaggerVersion")
         //    <!--用于JSON.toJSonString 方法使用-->
         implementation 'com.saygoer:fastjson:1.1-unwrap'
-        implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
-        implementation 'org.springframework.cloud:spring-cloud-starter-config'
-        implementation 'org.springframework.cloud:spring-cloud-config-server'
-
         //   <!--jexl引入 支持算法 -->
         implementation 'commons-jexl:commons-jexl:1.1'
-
-        implementation 'org.aspectj:aspectjweaver:1.9.19'
+        // <!--用于服务调用的时候熔断机制-->
+        implementation 'com.netflix.hystrix:hystrix-core:1.5.6'
+        // <!--Ribbon提供了服务间调用的客户端负载均衡功能，  等同feigin-->
+        implementation 'com.netflix.ribbon:ribbon:2.2.2'
+    //    implementation 'mysql:mysql-connector-java:8.0.31'
+//        //  <!-- Oracle驱动包  不添加，就没有驱动oracle.jdbc.OracleDriver-->
+//        implementation 'com.oracle.database.jdbc:ojdbc8:21.7.0.0'
+        // <!-- druid 数据库连接池   -->
+        implementation 'com.alibaba:druid-spring-boot-starter:1.2.9'
+        // <!--mybatis支持包 -->
+        //implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
+        implementation 'org.aspectj:aspectjweaver:1.9.9.1'
         implementation 'org.projectlombok:lombok:1.18.22'
-    }
-    tasks.named('test') {
-        useJUnitPlatform()
-    }
 
+
+
+    }
   /*  configurations {
         //移除spring boot 默认logger依赖
         all*.exclude module: 'spring-boot-starter-logging'
     }*/
 }
 
-jar{
-    enabled(false)
+dependencies {
+    implementation project("common")
+    implementation project("mybatis-learning")
+    implementation project("spring-boot-hystrix")
+    implementation project("spring-eureka")
+    implementation project("lpp-cache")
+
 }
-
-bootJar{
-    enabled(false)
-}
-
-
-

@@ -1,7 +1,7 @@
-package com.example.common.Config;
+package org.cache.redis;
 
-import com.example.common.util.GetBeanUtil;
-import com.example.common.util.RedisCommonUtil;
+import org.cache.util.GetBeanUtil;
+import org.cache.util.RedisCommonUtil;
 
 import java.util.HashMap;
 import java.util.Map;
