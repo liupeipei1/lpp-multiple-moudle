@@ -38,6 +38,8 @@ build/
 /spring-boot-hystrix/out/
 /spring-eureka/out/
 /lpp-cache/out/
+/spring-eureka-server/out/
+/Spring-cloud-config/out/
 /mybatis-learning/.gradle/buildOutputCleanup/
 /mybatis-learning/.gradle/
 /mybatis-learning/.gradle/6.8/executionHistory/executionHistory.bin

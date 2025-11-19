@@ -72,7 +72,6 @@ public class 搜索二维矩阵 {
 
     /*
     方法三： Z子型查找
-    特点：查找起点是从右上角 每次对比仅需左移一位或者下移动一位
      我们可以从矩阵 matrix 的右上角 (0,n−1) 进行搜索。在每一步的搜索过程中，如果我们位于位置 (x,y)，
      那么我们希望在以 matrix 的左下角为左下角、以 (x,y) 为右上角的矩阵中进行搜索，即行的范围为 [x,m−1]，列的范围为 [0,y]：
      */
@@ -87,10 +86,10 @@ public class 搜索二维矩阵 {
             if (nums[x][y] == target) {
                 return true;
             }
-            if (nums[x][y] > target) {//当大于target 那么目标在左上 比如当右上角15 大于tagret5 那么将纵坐标y需要--
+            if (nums[x][y] > target) {
                 y--;
             }
-            if (nums[x][y] < target) {//当15 小于目标值 那么需要将数 横坐标++ 找19 这一列的值
+            if (nums[x][y] < target) {
                 x++;
             }
         }

@@ -1,5 +1,5 @@
-from
+FROM adoptopenjdk/openjdk17
 
-expose 8081
+EXPOSE 8081
 
-copy
+ENTRYPOINT [ "sh", "-c", "java - -XmXms128mx256m -XX:PermSize=64m -XX:MaxPermSize=64m -jar /data/app/libs/${app_jar_name} >> /dev/null 2>&1 "]
