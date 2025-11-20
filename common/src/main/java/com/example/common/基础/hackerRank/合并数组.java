@@ -19,10 +19,10 @@ public class 合并数组 {
         sub3.add(8);
         sub3.add(10);
         in.add(sub3);
-        List<List<Integer>> rs=   mergeArray(in);
+        List<List<Integer>> rs= mergeArray(in);
         System.out.printf("rs"+ rs.toString());
 
-        List<List<Integer>> rs1=   mergeHighDefinitionIntervals(in);
+        List<List<Integer>> rs1= mergeHighDefinitionIntervals(in);
         System.out.printf("rs"+ rs1.toString());
     }
 
