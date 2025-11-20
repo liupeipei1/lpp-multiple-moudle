@@ -1,8 +1,5 @@
-// 1. 根项目统一管理版本（避免 subprojects 重复定义，优先根项目版本）
 plugins {
     id 'java'
-    //id 'org.springframework.boot' version "${springBootVersion}"
-    id 'io.spring.dependency-management' version '1.1.4'
 }
 ext {  //设置版本号
     swaggerVersion='3.0.0'

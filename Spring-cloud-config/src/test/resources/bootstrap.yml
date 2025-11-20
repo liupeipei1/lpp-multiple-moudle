@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8085/eureka
+  instance:
+    lease-renewal-interval-in-seconds: 10
+    status-page-url: /admin/info
+    health-check-url-path: /admin/health
