@@ -1,0 +1,13 @@
+eureka:
+    client:
+        fetch-registry: true
+        register-with-eureka: true
+        serviceUrl:
+            defaultZone: http://localhost:8085/eureka
+    instance:
+        hostname: localhost
+server:
+    port: 8085
+spring:
+    application:
+        name: lpp-spring-eureka

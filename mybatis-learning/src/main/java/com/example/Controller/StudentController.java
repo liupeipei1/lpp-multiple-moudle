@@ -4,10 +4,10 @@ import com.example.Entity.Student;
 import com.example.Service.DoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import jakarta.annotation.Resource;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
 
 @Api(tags = "本地接口文档", value = "/aa", description = "本地接口文档")
 @RestController
