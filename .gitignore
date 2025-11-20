@@ -41,4 +41,6 @@ build/
 /spring-eureka-server/out/
 /mybatis-learning/.gradle/buildOutputCleanup/
 /mybatis-learning/.gradle/
-/mybatis-learning/.gradle/6.8/executionHistory/executionHistory.bin
+/mybatis-learning/.gradle/
+/hadoop-demo/out/
+/common/.gradle/
