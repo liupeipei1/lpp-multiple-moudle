@@ -1,7 +1,6 @@
 package com.example.common.基础.leetcode;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class 相交链表 {
@@ -59,5 +58,21 @@ public class 相交链表 {
             pb=pb==null? headB:pb.next;
         }
         return pa;
+    }
+}
+
+class ListNode {
+
+    int val;
+    ListNode next;
+
+    ListNode(int x) {
+        val = x;
+        next = null;
+    }
+
+    ListNode(int var, ListNode var1) {
+        this.val = var;
+        this.next = var1;
     }
 }
