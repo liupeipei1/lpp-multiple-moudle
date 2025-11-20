@@ -4,7 +4,4 @@ include 'mybatis-learning'
 include 'spring-eureka-server'
 include 'spring-boot-hystrix'
 include 'lpp-cache'
-include 'Spring-cloud-config'
-
-
 include 'hadoop-demo'

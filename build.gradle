@@ -1,7 +1,8 @@
+// 1. 根项目统一管理版本（避免 subprojects 重复定义，优先根项目版本）
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.1.2'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    //id 'org.springframework.boot' version "${springBootVersion}"
+    id 'io.spring.dependency-management' version '1.1.4'
 }
 ext {  //设置版本号
     swaggerVersion='3.0.0'
@@ -63,7 +64,7 @@ subprojects{
         // <!--用于服务调用的时候熔断机制-->
         implementation 'com.netflix.hystrix:hystrix-core:1.5.6'
         // <!--Ribbon提供了服务间调用的客户端负载均衡功能，  等同feigin-->
-        implementation 'com.netflix.ribbon:ribbon:2.2.2'
+        implementation 'com.netflix.ribbon:ribbon:2.7.18'
     //    implementation 'mysql:mysql-connector-java:8.0.31'
 //        //  <!-- Oracle驱动包  不添加，就没有驱动oracle.jdbc.OracleDriver-->
 //        implementation 'com.oracle.database.jdbc:ojdbc8:21.7.0.0'
@@ -85,9 +86,10 @@ subprojects{
 
 dependencies {
     implementation project("common")
+    implementation project("hadoop-demo")
     implementation project("mybatis-learning")
     implementation project("spring-boot-hystrix")
-    implementation project("spring-eureka")
+    implementation project("spring-eureka-server")
     implementation project("lpp-cache")
 
 }
