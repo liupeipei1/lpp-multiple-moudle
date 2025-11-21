@@ -1,8 +1,7 @@
 plugins {
     id 'java'
-    //id 'org.springframework.boot'
-    //id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-
+    id 'org.springframework.boot' version '3.5.0' // 替换为你的 Spring Boot 版本springBootVersion='3.5.0'
+    id 'io.spring.dependency-management' version '1.1.6' // 核心：依赖管理插件 不然下面的dependencyManagement会报错 // 适配 3.x Boot 的依赖管理插件
 }
 //apply plugin: 'io.spring.dependency-management'
 
@@ -14,15 +13,15 @@ repositories {
     maven { url 'https://maven.aliyun.com/repository/public/' }
     mavenCentral()
 }
-/*ext {
-    set('springCloudVersion', "2022.0.3")
+ext {
+    set('springCloudVersion', "2025.0.1")
 }
 
 dependencyManagement {
     imports {
         mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
     }
-}*/
+}
 
 dependencies {
     // <!--用于服务调用的时候熔断机制-->

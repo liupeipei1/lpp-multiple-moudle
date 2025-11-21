@@ -7,7 +7,11 @@ ext {  //设置版本号
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 //sourceCompatibility = '17'
-
+// Java 版本配置（3.5 Boot 推荐 Java 17+）
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
@@ -26,6 +30,7 @@ allprojects {
         maven {
             url 'https://maven.aliyun.com/repository/spring/'
         }
+        maven { url 'https://repo.spring.io/milestone' }
         mavenLocal()
         mavenCentral()
     }
@@ -71,8 +76,11 @@ subprojects{
         //implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
         implementation 'org.aspectj:aspectjweaver:1.9.9.1'
         implementation 'org.projectlombok:lombok:1.18.22'
-
-
+        // 核心：手动指定 Eureka Client 版本（2024.0.0 兼容的最新版是 4.2.0）  ====begin
+        implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:4.3.0'
+        //============Spring Cloud 2024.0.0（Nyx）版本中，Eureka Client 已从 Spring Cloud 核心依赖包中移除，不再包含在 spring-cloud-dependencies  end===
+        // 必须保留：Spring Web 依赖（Eureka Client 依赖 Web 通信）
+        implementation 'org.springframework.boot:spring-boot-starter-web'
 
     }
   /*  configurations {
