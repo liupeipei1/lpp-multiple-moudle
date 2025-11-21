@@ -1,8 +1,17 @@
 plugins {
     id 'java'
- //   id 'org.springframework.boot' version '3.1.2'
+    id 'org.springframework.boot' version '3.5.0' // 替换为你的 Spring Boot 版本springBootVersion='3.5.0'
+    id 'io.spring.dependency-management' version '1.1.6' // 核心：依赖管理插件 不然下面的dependencyManagement会报错 // 适配 3.x Boot 的依赖管理插件
 }
-
+// Spring Cloud 版本管理（2025.0.1）
+ext {
+    springCloudVersion = "2025.0.1"
+}
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
 group 'org.example'
 version '1.0-SNAPSHOT'
 
@@ -10,6 +19,7 @@ repositories {
     maven {
         url = uri("https://plugins.gradle.org/m2/")
     }
+    maven { url 'https://repo.spring.io/milestone' } // Spring 官方兜底
 }
 
 dependencies {
