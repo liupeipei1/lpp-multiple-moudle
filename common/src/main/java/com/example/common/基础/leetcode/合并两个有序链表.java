@@ -52,13 +52,14 @@ public class 合并两个有序链表 {
         return head;
     }
 
-    //方法2递归
+    //方法2递归  这里因为两个链表是升序的方式  如果是无序的 返回的结果也是无序的、
+    //贪心  每次选最小的数
     public static ListNode mergeTwoLists2(ListNode list1, ListNode list2) {
         if (list1 == null) {
             return list2;
         } else if (list2 == null) {
             return list1;
-        } else if (list1.val < list2.val) {
+        } else if (list1.val < list2.val) {//确保了「当前层返回的节点是两个链表中最小的」，这是排序的基础；
             list1.next = mergeTwoLists2(list1.next, list2);
             return list1;
         } else {
