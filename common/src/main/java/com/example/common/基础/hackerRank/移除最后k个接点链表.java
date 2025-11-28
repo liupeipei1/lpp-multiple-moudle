@@ -17,8 +17,11 @@ public class 移除最后k个接点链表 {
         SinglyLinkedListNode case1 = new SinglyLinkedListNode(5, new SinglyLinkedListNode(6, new SinglyLinkedListNode(7, new SinglyLinkedListNode(8))));
         SinglyLinkedListNode case2 = new SinglyLinkedListNode(5);
         SinglyLinkedListNode case3 = new SinglyLinkedListNode(1, new SinglyLinkedListNode(2));
+        SinglyLinkedListNode case4 = new
+                SinglyLinkedListNode(1,
+                new SinglyLinkedListNode(2,new SinglyLinkedListNode(3,new SinglyLinkedListNode(4,new SinglyLinkedListNode(5)))));
 
-        SinglyLinkedListNode node1 = removeKthNodeFromEnd1(case3, 0);
+        SinglyLinkedListNode node1 = removeKthNodeFromEnd(case4, 3);
 
         //SinglyLinkedListNode node = removeKthNodeFromEnd(new SinglyLinkedListNode(1), 1);
         while (node1 != null) {
@@ -27,6 +30,7 @@ public class 移除最后k个接点链表 {
         }
     }
 
+    //solution 1
     public static SinglyLinkedListNode removeKthNodeFromEnd1(SinglyLinkedListNode head, int k) {
         if (Objects.isNull(head)) {
             return head;
@@ -56,6 +60,7 @@ public class 移除最后k个接点链表 {
         return head;
     }
 
+    //solution2
     public static SinglyLinkedListNode removeKthNodeFromEnd(SinglyLinkedListNode head, int k) {
         // Write your code here
         if (head == null) return head;
@@ -75,7 +80,7 @@ public class 移除最后k个接点链表 {
             return head.next;
         }
         SinglyLinkedListNode current = head;
-        for (int j = 0; j < indexToDelete - 1; j++) {
+        for (int j = 0; j < indexToDelete - 1; j++) { //前驱点的前驱点
             current = current.next;
         }
         if (current.next != null) {
