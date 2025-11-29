@@ -1,9 +1,7 @@
 package com.example.common.基础.hackerRank;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class 去掉多个链表重复的接点 {
 
