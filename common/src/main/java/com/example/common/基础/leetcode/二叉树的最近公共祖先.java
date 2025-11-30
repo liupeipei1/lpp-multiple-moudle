@@ -19,8 +19,8 @@ public class 二叉树的最近公共祖先 {
         node.left.right = new TreeNode(5);
         node.right.left = new TreeNode(6);
 
-        TreeNode p= new TreeNode(5);
-        TreeNode q= new TreeNode(6);
+        TreeNode p = new TreeNode(5);
+        TreeNode q = new TreeNode(6);
         TreeNode rs = lowestCommonAncestor(node, p, q);
         System.out.println(rs);
     }
@@ -44,20 +44,9 @@ public class 二叉树的最近公共祖先 {
         if (root == null) {
             return null;
         }
-         dfs(root, p, q);
+        dfs(root, p, q);
         return ans;
     }
 
 
-}
-
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int x) {
-        val = x;
-    }
 }
