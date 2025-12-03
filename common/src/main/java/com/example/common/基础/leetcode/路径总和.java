@@ -51,12 +51,17 @@ public class 路径总和 {
       路径定义为 “从任意节点到其后代节点的连续路径”
       回溯：递归遍历完子树后，需从prefix中移除当前节点的前缀和（避免影响其他分支的统计）
 
-curr - targetSum 其实是在找一个 “历史前缀和”：
-假设二叉树路径是：根(1) → A(2) → B(3) → C(4)，targetSum=7。
-到节点 C 时，curr = 1+2+3+4 = 10；
-计算 curr - targetSum = 10 - 7 = 3；
-我们去哈希表中查是否有前缀和等于3：发现 “根→A” 的前缀和正好是1+2=3；
-这就说明：从 A 的下一个节点（B）到 C 的路径和（3+4=7）等于targetSum！
+    curr - targetSum 其实是在找一个 “历史前缀和”：
+    假设二叉树路径是：根(1) → A(2) → B(3) → C(4)，targetSum=7。
+    到节点 C 时，curr = 1+2+3+4 = 10；
+    计算 curr - targetSum = 10 - 7 = 3；
+    我们去哈希表中查是否有前缀和等于3：发现 “根→A” 的前缀和正好是1+2=3；
+    这就说明：从 A 的下一个节点（B）到 C 的路径和（3+4=7）等于targetSum！
+
+    处理当前节点（计算curr、更新prefix）
+    2. 递归遍历左子树
+    3. 递归遍历右子树
+    4. 回溯当前节点的prefix（减1）
      */
     public static int dfs(TreeNode root, Map<Long, Integer> prefix, long curr, int targetSum) {
         if (root == null) {
@@ -69,7 +74,7 @@ curr - targetSum 其实是在找一个 “历史前缀和”：
         prefix.put(curr, prefix.getOrDefault(curr, 0) + 1);
         let += dfs(root.left, prefix, curr, targetSum);
         let += dfs(root.right, prefix, curr, targetSum);
-        prefix.put(curr, prefix.getOrDefault(curr, 0) - 1);
+        prefix.put(curr, prefix.getOrDefault(curr, 0) - 1);//回溯
         return let;
     }
 }
