@@ -56,9 +56,9 @@ public class 岛屿数量 {
         int[][] dirs = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
         while (!queue.isEmpty()) {
             int[] curr = queue.poll();
-            for (int i = 0; i < dirs.length; i++) {
-                int row1 = curr[0] + dirs[i][0];
-                int col1 = curr[1] + dirs[i][1];
+            for (int[] dir : dirs) {
+                int row1 = curr[0] + dir[0];
+                int col1 = curr[1] + dir[1];
                 if (row1 >= 0 && col1 >= 0 && row1 < grid.length && col1 < grid[0].length && grid[row1][col1] == '1') {
                     queue.offer(new int[]{row1, col1});
                     grid[row1][col1] = '0';
