@@ -77,7 +77,7 @@ public class 电话号码的字母组合 {
     //深度快速搜索
     public static void dfs(int i, List<String> rs, char[] path, char[] digits, String[] mapping) {
         if (i == digits.length) {
-            rs.add(new String(path));
+            rs.add(new String(path));//注意这里千万不能用引用 地址 因为path是一直动态在变化 这里必须要new string才行
             return;
         }
         int index = digits[i] - '0';
