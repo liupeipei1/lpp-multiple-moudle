@@ -50,6 +50,10 @@ public class 全排列 {
      示例 1：
     输入：nums = [1,2,3]
     输出：[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
+   i=0  index 0 1 2 3=index(2)+1 已经是最 里面一层
+        所以当index=3时 回溯path-1 变成[1,2] 此时最里面的i=2  因为path前面已经存在[1,2]所以此时最里面的是i=2 num[2]=3
+        dfs中的最终index=2=1+1 回溯path[1] 此时最里面的i=1 path目前存在【1】到下一次循环i=2
+        当 123 132 都已经结束后  path回退也会清空 然后再重新下一次 同上
      */
     public static void dfs(List<List<Integer>> rs, List<Integer> path, int[] nums, int index) {
         if (index == nums.length) {
