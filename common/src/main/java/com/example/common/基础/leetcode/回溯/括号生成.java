@@ -51,7 +51,7 @@ public class 括号生成 {
         }
         //当left == right 下一个只能用左边的括号 这种重点
         if (left == right) {
-            getGenerateParentheses(string + "(", left - 1, right);
+            getGenerateParentheses(string + "(", left - 1, right); //字符串不可变，天然回溯，无需手动删字符
         } else if (left < right) { //当left小于right 可以用左边的也可以右边的
             if (left > 0) {// 左括号还有剩余，可加左括号
                 getGenerateParentheses(string + "(", left - 1, right);
