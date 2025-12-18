@@ -14,6 +14,7 @@ public class 单词搜索 {
                 {'B', 'C', 'D'}};
 
         System.out.printf("" + exist(chars1, "aaa"));
+        System.out.printf(""+exist1(chars1,"aaa"));
 
     }
 
@@ -78,5 +79,52 @@ public class 单词搜索 {
 
         // 所有方向都走不通，返回false
         return false;
+    }
+
+
+    //solution2  类似方法1 只是没用visited数组
+    public static boolean exist1(char[][] board, String word) {
+        if (board == null || board.length == 0 || board[0].length == 0 || word == null || word.length() == 0) {
+            return false;
+        }
+        int m = board.length;
+        int n = board[0].length;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (board[i][j] == word.charAt(0)) {
+                    if (canFind(board, word, 0, i, j)) { //第一个单词相同 往后面找下面的字符
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    //这里没用用到visited数组 也可以将访问过的字符换成特殊字符
+    public static boolean canFind(char[][] board, String word, int index, int x, int y) {
+        //当所有单词都已经匹配上 那么就是有效的路径
+        if (index == word.length()) {
+            return true;
+        }
+        int m = board.length;
+        int n = board[0].length;
+        //当坐标越界 or 字符不匹配
+        if (x < 0 || y < 0 || x >=m || y >= n || board[x][y] != word.charAt(index)) {
+            return false;
+        }
+
+        //字符匹配的情况  将字符改成特殊字符 这样可以避免用visited数组确定是否访问 这样就不会出现重复访问的情况
+        char c = board[x][y];
+        board[x][y] = '#';
+
+        //将坐标附近上下左右都找一遍 是否匹配
+        boolean find = canFind(board, word, index + 1, x + 1, y) ||
+                canFind(board, word, index + 1, x - 1, y) ||
+                canFind(board, word, index + 1, x, y - 1) ||
+                canFind(board, word, index + 1, x, y + 1);
+
+        board[x][y] = c;//无论找到没找到都需要改成原来的样子
+        return find;
     }
 }
