@@ -80,7 +80,7 @@ public class 电话号码的字母组合 {
             rs.add(new String(path));//注意这里千万不能用引用 地址 因为path是一直动态在变化 这里必须要new string才行
             return;
         }
-        int index = digits[i] - '0';
+        int index = digits[i] - '0';//将字符形式的数字转换为整数的经典写法
         String letter = mapping[index];
         //因为这里用的是数组 当循环到i=1的时候，会直接更新所以不像stringbuilder那样
         for (char c : letter.toCharArray()) {
