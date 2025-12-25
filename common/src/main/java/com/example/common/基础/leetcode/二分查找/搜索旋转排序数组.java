@@ -11,8 +11,8 @@ package com.example.common.基础.leetcode.二分查找;
 public class 搜索旋转排序数组 {
 
     public static void main(String[] args) {
-        System.out.printf(search(new int[]{4, 5, 6, 7, 0, 1, 2}, 0) + "");
-        System.out.printf(search1(new int[]{4, 5, 6, 7, 0, 1, 2}, 0) + "");
+        System.out.printf(search(new int[]{4, 5, 6, 7, 0, 1, 2}, 0) + "\n");
+        System.out.printf(search1(new int[]{4, 5, 6, 7, 0, 1, 2}, 0) + "\n");
 
     }
 
