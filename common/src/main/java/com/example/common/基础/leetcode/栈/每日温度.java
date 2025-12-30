@@ -12,8 +12,8 @@ import java.util.Deque;
  */
 public class 每日温度 {
     public static void main(String[] args) {
-       // int[] rs = dailyTemperatures1(new int[]{73, 74, 75, 71, 69, 72, 76, 73});
-        int[] rs = dailyTemperatures1(new int[]{75,71,69,72});
+        // int[] rs = dailyTemperatures1(new int[]{73, 74, 75, 71, 69, 72, 76, 73});
+        int[] rs = dailyTemperatures1(new int[]{75, 71, 69, 72});
 
         for (int i = 0; i < rs.length; i++) {
             System.out.printf("\n" + rs[i]);
