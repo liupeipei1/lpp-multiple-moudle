@@ -1,6 +1,6 @@
 package com.example.common.基础.hackerRank;
 
-import com.example.common.基础.leetcode.TreeNode;
+import com.example.common.基础.leetcode.链表.TreeNode;
 
 import java.util.Arrays;
 import java.util.List;
