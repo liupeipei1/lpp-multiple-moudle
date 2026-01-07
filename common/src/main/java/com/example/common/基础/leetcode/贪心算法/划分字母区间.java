@@ -13,7 +13,7 @@ public class 划分字母区间 {
     public static void main(String[] args) {
         List<Integer> r = partitionLabels("ababcc");
         for (Integer i : r) {
-            System.out.printf("" + i);
+            System.out.printf("\t" + i);
         }
     }
 
