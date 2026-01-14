@@ -42,6 +42,17 @@ public class 爬楼梯 {
         System.out.printf("\n" + climbStairs3(5));//8
         System.out.printf("\n" + climbStairs3(35)); //14930352
 
+
+        System.out.printf("==============单次m阶梯，总共多少种方法 \n");
+      /*  System.out.printf("\n" + climbStairsM(2, 2));//2
+        System.out.printf("\n" + climbStairsM(3, 2));//3
+        System.out.printf("\n" + climbStairsM(4, 2));//5
+        System.out.printf("\n" + climbStairsM(5, 2));//8*/
+        System.out.printf("\n" + climbStairsM(1, 3));//1  f(x) = f(x-1) + f(x-2) + f(x-3)   f(0)=1
+        System.out.printf("\n" + climbStairsM(2, 3));//2  f(x) = f(x-1) + f(x-2) + f(x-3)
+        System.out.printf("\n" + climbStairsM(3, 3));//4  f(x) = f(x-1) + f(x-2) + f(x-3)
+        System.out.printf("\n" + climbStairsM(4, 3));//7  f(x) = f(x-1) + f(x-2) + f(x-3)
+        System.out.printf("\n" + climbStairsM(5, 3));//13  f(x) = f(x-1) + f(x-2) + f(x-3)
     }
 
 
@@ -143,5 +154,22 @@ public class 爬楼梯 {
         return new int[][]{{a, b}, {c, d}};
     }
 
+
+    //如果设置单次最多爬m级台阶 总台阶数
+    public static int climbStairsM(int n, int m) {
+        if (n <= 0) return 0;
+        if (n <= m) return (1 << (n - 1)); // 2^(n-1)
+        int[] dp = new int[n + 1];
+        dp[0] = 1;
+        dp[1] = 1;
+        dp[2] = 2;
+        for (int i = 3; i <= n; i++) {
+            for (int j = 1; j <= m && j <= i; j++) {
+                //dp[i] += dp[i - j];//等价与dp[i] = dp[i] + dp[i - j];
+                dp[i] = dp[i] + dp[i - j];
+            }
+        }
+        return dp[n];
+    }
 
 }
