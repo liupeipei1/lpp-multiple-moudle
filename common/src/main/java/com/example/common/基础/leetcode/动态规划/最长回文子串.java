@@ -37,6 +37,7 @@ public class 最长回文子串 {
         return res;
     }
 
+    //当前坐标向两边扩展
     public String expandAroundCenter(String s, int left, int right) {
         while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
             left--;
