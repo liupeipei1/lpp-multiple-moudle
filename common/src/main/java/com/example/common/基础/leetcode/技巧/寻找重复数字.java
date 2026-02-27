@@ -20,7 +20,12 @@ public class 寻找重复数字 {
         int left = 1; //数组值最小值
         int right = nums.length - 1; //这里其实就是以数值范围为边界进行二分查找  因为题目要求 数组的值不能超过数组长度 并且只存在一个重复的数字
         while (left < right) {
-            int mid = left + (right - left) / 2;
+            /*
+             left = 2**30
+              right = 2**30 + 1
+              如果单独用 (left+right)/2 就会存在上面的情况  因为left+right会超过整数范围  导致溢出  所以需要用 left + (right - left) / 2 来避免整数溢出
+             */
+            int mid = left + (right - left) / 2; //避免整数溢出
             int count = 0;
             for (int num : nums) {
                 if (num <= mid) {
