@@ -20,7 +20,18 @@ public class 买卖股票的最佳时机 {
 
 
     }
-
+    //可以使用 最简单的方式  可以理解成 找到price[i]前面最小的数  和与当前price[i] 差距最大的值
+    //所以不存在 最小值在后面 低卖 高买的可能性
+    public static int maxProfit(int[] prices) {
+        if (prices == null || prices.length == 0) return 0;
+        int minPre = Integer.MAX_VALUE;
+        int maxPre = Integer.MIN_VALUE;
+        for (int i = 0; i < prices.length; i++) {
+            minPre = Math.min(minPre, prices[i]);
+            maxPre = Math.max(maxPre, prices[i] - minPre);
+        }
+        return maxPre;
+    }
     //超出时间限制了
     @Deprecated
     public static int maxProfit1(int[] prices) {
@@ -39,7 +50,7 @@ public class 买卖股票的最佳时机 {
     }
 
     //可以使用
-    public static int maxProfit(int[] prices) {
+    public static int maxProfit2(int[] prices) {
         if (prices == null || prices.length == 0) return 0;
         int max = 0;
         int mini[] = new int[2];//记录最小的数和index
@@ -57,17 +68,6 @@ public class 买卖股票的最佳时机 {
         return max;
     }
 
-    //可以使用 最简单的方式  可以理解成 找到price[i]前面最小的数  和与当前price[i] 差距最大的值
-    //所以不存在 最小值在后面 低卖 高买的可能性
-    public static int maxProfit2(int[] prices) {
-        if (prices == null || prices.length == 0) return 0;
-        int minPre = Integer.MAX_VALUE;
-        int maxPre = Integer.MIN_VALUE;
-        for (int i = 0; i < prices.length; i++) {
-            minPre = Math.min(minPre, prices[i]);
-            maxPre = Math.max(maxPre, prices[i] - minPre);
-        }
-        return maxPre;
-    }
+
 
 }
